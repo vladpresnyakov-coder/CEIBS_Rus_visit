@@ -167,8 +167,8 @@
         "dayNum": "29",
         "month": "1月",
         "city": "圣彼得堡",
-        "image": "hermitage",
-        "imageAlt": "圣彼得堡冬宫与封冻的涅瓦河",
+        "image": "petersburg",
+        "imageAlt": "冬日圣彼得堡，封冻河上的一座桥",
         "morning": "上午自由活动",
         "afternoon": "12:05 飞往圣彼得堡，之后参观埃尔米塔日或进行商务会面",
         "evening": "马林斯基剧院，或在城里夜走",
@@ -258,6 +258,12 @@
         "placeholder": false
       },
       {
+        "image": "petersburg",
+        "caption": "冬日的圣彼得堡",
+        "alt": "圣彼得堡封冻河上的一座桥",
+        "placeholder": false
+      },
+      {
         "image": "palace",
         "caption": "夜色中的冬宫广场",
         "alt": "夜晚的圣彼得堡冬宫与宫殿广场",
@@ -278,8 +284,8 @@
       {
         "image": "club",
         "caption": "莫斯科的夜晚",
-        "alt": "莫斯科俱乐部内景的照片占位",
-        "placeholder": true
+        "alt": "夜店里，灯光下的DJ和人群",
+        "placeholder": false
       },
       {
         "image": "dining",
@@ -290,8 +296,8 @@
       {
         "image": "plate",
         "caption": "这一盘",
-        "alt": "现代俄罗斯菜摆盘的照片占位",
-        "placeholder": true
+        "alt": "一盘菜的近景",
+        "placeholder": false
       }
     ]
   },

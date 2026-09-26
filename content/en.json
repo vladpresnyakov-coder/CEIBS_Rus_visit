@@ -167,8 +167,8 @@
         "dayNum": "29",
         "month": "Jan",
         "city": "St. Petersburg",
-        "image": "hermitage",
-        "imageAlt": "The Winter Palace and the frozen Neva in St. Petersburg",
+        "image": "petersburg",
+        "imageAlt": "A bridge over a frozen river in winter St. Petersburg",
         "morning": "Free morning",
         "afternoon": "12:05 flight to St. Petersburg, then the Hermitage or business meetings",
         "evening": "Mariinsky Theatre, or a night walk through the city",
@@ -258,6 +258,12 @@
         "placeholder": false
       },
       {
+        "image": "petersburg",
+        "caption": "Winter St. Petersburg",
+        "alt": "A bridge over a frozen river in St. Petersburg",
+        "placeholder": false
+      },
+      {
         "image": "palace",
         "caption": "Palace Square at night",
         "alt": "The Winter Palace and Palace Square at night, St. Petersburg",
@@ -278,8 +284,8 @@
       {
         "image": "club",
         "caption": "A Moscow night",
-        "alt": "Placeholder for a Moscow club interior",
-        "placeholder": true
+        "alt": "A nightclub, with a DJ and the crowd under the lights",
+        "placeholder": false
       },
       {
         "image": "dining",
@@ -290,8 +296,8 @@
       {
         "image": "plate",
         "caption": "The plate",
-        "alt": "Placeholder for plated modern Russian cuisine",
-        "placeholder": true
+        "alt": "A close-up of a plated dish",
+        "placeholder": false
       }
     ]
   },

@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "title": "冬天的俄罗斯 · CEIBS同学 · 2027年1月",
+    "description": "给CEIBS同学的一次私人冬季行程。2027年1月24日至31日：莫斯科、捷里别尔卡、圣彼得堡。预报名。"
+  },
+  "skip": "跳到正文",
+  "nav": {
+    "brand": "CEIBS · 俄罗斯 2027",
+    "tracks": "路线",
+    "why": "冬天",
+    "program": "行程",
+    "register": "预报名",
+    "langLabel": "语言"
+  },
+  "hero": {
+    "eyebrow": "给 CEIBS 同学的一次私人行程",
+    "headlineLead": "冬天的俄罗斯。",
+    "headlineRest": "我们眼中的样子。",
+    "subline": "2027年1月24日至31日 · 莫斯科 · 摩尔曼斯克与捷里别尔卡 · 圣彼得堡",
+    "meta": "5–10 人",
+    "cta": "预报名",
+    "countdownLabel": "距离抵达莫斯科",
+    "days": "天",
+    "hours": "小时",
+    "minutes": "分钟",
+    "seconds": "秒",
+    "countdownDone": "抵达日到了。",
+    "imageAlt": "雪中的莫斯科红场与圣瓦西里大教堂"
+  },
+  "tracks": {
+    "eyebrow": "01 — 四条路线",
+    "title": "为一个理由而来，为别的理由留下。",
+    "intro": "四条路线可以自由搭配。多数人都会这么做。",
+    "items": [
+      {
+        "id": "business",
+        "title": "商务",
+        "text": "告诉我们你的商业兴趣，我们来安排私人会面和企业参访。地点在莫斯科和圣彼得堡，2月1日至3日可以再留几天。"
+      },
+      {
+        "id": "education",
+        "title": "教育",
+        "text": "SKOLKOVO，俄罗斯顶尖商学院。一场关于在俄经商的讲座，以及与 Yandex、Sber 等科技公司的会面。"
+      },
+      {
+        "id": "culture",
+        "title": "文化",
+        "text": "雪中的克里姆林宫、埃尔米塔日、圣彼得堡的宫殿，还有莫斯科的一个夜晚。"
+      },
+      {
+        "id": "unique",
+        "title": "独特",
+        "text": "在北极边缘过一天：捷里别尔卡、雪橇、巴伦支海，还有潜水员刚捞上来、几分钟内就能吃到的海胆和扇贝。"
+      }
+    ],
+    "campusImage": "skolkovo",
+    "campusAlt": "莫斯科管理学院 SKOLKOVO 的圆盘形校园",
+    "campusCaption": "SKOLKOVO，莫斯科管理学院。"
+  },
+  "why": {
+    "eyebrow": "02 — 为什么是这一周",
+    "title": "为什么是俄罗斯，为什么是冬天",
+    "image": "coast",
+    "imageAlt": "捷里别尔卡的雪岸，面向巴伦支海",
+    "tempsNote": "一月平均气温，大约",
+    "temps": [
+      { "place": "莫斯科", "value": "−6°" },
+      { "place": "圣彼得堡", "value": "−5°" },
+      { "place": "捷里别尔卡", "value": "−8 到 −10°" }
+    ],
+    "points": [
+      {
+        "title": "冬天，最像它自己",
+        "text": "被雪盖住的城市、节日的灯火、暖和的餐厅，正赶上戏剧季。这是俄罗斯最本真的时候。"
+      },
+      {
+        "title": "没有传闻里那么冷",
+        "text": "一月大概是：莫斯科 −6 °C，圣彼得堡 −5 °C，摩尔曼斯克和捷里别尔卡 −8 到 −10 °C。湾流经过，巴伦支海不会封冻。出发前我们会发一份保暖衣物清单。"
+      },
+      {
+        "title": "有极光，也有白天",
+        "text": "这正是极光的季节。极夜已经结束，北极仍然有白昼。"
+      },
+      {
+        "title": "一周，三种俄罗斯",
+        "text": "商业首都、北极，还有帝国首都。"
+      }
+    ],
+    "visa": "中国公民可免签入境，有效期至2027年12月31日。其他国籍由组织者协助办理电子签证。"
+  },
+  "program": {
+    "eyebrow": "03 — 这一周",
+    "title": "一天一天",
+    "morning": "上午",
+    "afternoon": "下午",
+    "evening": "晚上",
+    "hotel": "住宿",
+    "days": [
+      {
+        "id": "jan24",
+        "weekday": "周日",
+        "dayNum": "24",
+        "month": "1月",
+        "city": "莫斯科",
+        "image": "redSquare",
+        "imageAlt": "抵达日，雪中的莫斯科红场",
+        "morning": "—",
+        "afternoon": "抵达，入住",
+        "evening": "飞行后休息，可选一顿轻晚餐",
+        "hotel": "莫斯科"
+      },
+      {
+        "id": "jan25",
+        "weekday": "周一",
+        "dayNum": "25",
+        "month": "1月",
+        "city": "莫斯科",
+        "image": "yandex",
+        "imageAlt": "莫斯科 Yandex 总部",
+        "morning": "企业参访：Yandex",
+        "afternoon": "SKOLKOVO 校园参观与讲座",
+        "evening": "欢迎晚宴（塔季扬娜日，俄罗斯学生节）",
+        "hotel": "莫斯科"
+      },
+      {
+        "id": "jan26",
+        "weekday": "周二",
+        "dayNum": "26",
+        "month": "1月",
+        "city": "莫斯科",
+        "image": "basil",
+        "imageAlt": "雪夜中的红场与圣瓦西里大教堂",
+        "morning": "克里姆林宫、军械库、红场",
+        "afternoon": "单独的商务会面",
+        "evening": "晚餐或一场文化晚会",
+        "hotel": "莫斯科"
+      },
+      {
+        "id": "jan27",
+        "weekday": "周三",
+        "dayNum": "27",
+        "month": "1月",
+        "city": "莫斯科 → 摩尔曼斯克",
+        "image": "sber",
+        "imageAlt": "莫斯科加加林广场上的 Sber 总部",
+        "morning": "企业参访，例如 Sber 和创意产业",
+        "afternoon": "17:00 飞往摩尔曼斯克",
+        "evening": "北极晚餐",
+        "hotel": "摩尔曼斯克"
+      },
+      {
+        "id": "jan28",
+        "weekday": "周四",
+        "dayNum": "28",
+        "month": "1月",
+        "city": "捷里别尔卡",
+        "image": "aurora",
+        "imageAlt": "捷里别尔卡上空的北极光",
+        "morning": "驱车前往捷里别尔卡",
+        "afternoon": "雪橇、巴伦支海、船和潜水员，新鲜的海胆和扇贝",
+        "evening": "追逐极光",
+        "hotel": "摩尔曼斯克"
+      },
+      {
+        "id": "jan29",
+        "weekday": "周五",
+        "dayNum": "29",
+        "month": "1月",
+        "city": "圣彼得堡",
+        "image": "hermitage",
+        "imageAlt": "圣彼得堡冬宫与封冻的涅瓦河",
+        "morning": "上午自由活动",
+        "afternoon": "12:05 飞往圣彼得堡，之后参观埃尔米塔日或进行商务会面",
+        "evening": "马林斯基剧院，或在城里夜走",
+        "hotel": "圣彼得堡"
+      },
+      {
+        "id": "jan30",
+        "weekday": "周六",
+        "dayNum": "30",
+        "month": "1月",
+        "city": "圣彼得堡 → 莫斯科",
+        "image": "peterhof",
+        "imageAlt": "冬夜的彼得霍夫大宫殿",
+        "morning": "冬日的彼得霍夫或皇村",
+        "afternoon": "萨普桑高铁返回莫斯科",
+        "evening": "莫斯科俱乐部告别派对",
+        "hotel": "莫斯科"
+      },
+      {
+        "id": "jan31",
+        "weekday": "周日",
+        "dayNum": "31",
+        "month": "1月",
+        "city": "莫斯科",
+        "image": "redSquare",
+        "imageAlt": "离开那天早上的冬日红场",
+        "morning": "告别早午餐",
+        "afternoon": "离开",
+        "evening": "—",
+        "hotel": "—"
+      }
+    ],
+    "extension": "2月1日至3日 — 可选的莫斯科商务延长。",
+    "backup": "北极天气备案：如果去捷里别尔卡的路封了，就改去核动力破冰船「列宁号」，以及驯鹿和哈士奇农场。",
+    "backupImage": "lenin",
+    "backupAlt": "核动力破冰船「列宁号」，现停泊在摩尔曼斯克，作为博物馆",
+    "galleryTitle": "你会真正经历的瞬间",
+    "galleryHint": "左右滑动",
+    "photoToAdd": "待补照片",
+    "gallery": [
+      {
+        "image": "crab",
+        "caption": "打开的帝王蟹",
+        "alt": "一只剖开的帝王蟹腿",
+        "placeholder": false
+      },
+      {
+        "image": "uni",
+        "caption": "海胆",
+        "alt": "新鲜海胆",
+        "placeholder": false
+      },
+      {
+        "image": "scallop",
+        "caption": "扇贝",
+        "alt": "一盘煎扇贝",
+        "placeholder": false
+      },
+      {
+        "image": "boat",
+        "caption": "在北冰洋上",
+        "alt": "北冰洋上的一艘小船",
+        "placeholder": false
+      },
+      {
+        "image": "diver",
+        "caption": "潜水员",
+        "alt": "潜水员打捞海胆和扇贝的照片占位",
+        "placeholder": true
+      },
+      {
+        "image": "aurora",
+        "caption": "捷里别尔卡的极光",
+        "alt": "捷里别尔卡气象站上空的北极光",
+        "placeholder": false
+      },
+      {
+        "image": "basil",
+        "caption": "雪中的红场",
+        "alt": "雪夜中的圣瓦西里大教堂",
+        "placeholder": false
+      },
+      {
+        "image": "hermitage",
+        "caption": "埃尔米塔日，封冻的涅瓦河",
+        "alt": "封冻涅瓦河对岸的埃尔米塔日",
+        "placeholder": false
+      },
+      {
+        "image": "palace",
+        "caption": "夜色中的冬宫广场",
+        "alt": "夜晚的圣彼得堡冬宫与宫殿广场",
+        "placeholder": false
+      },
+      {
+        "image": "rover",
+        "caption": "莫斯科的 Yandex 机器人",
+        "alt": "穿过莫斯科街道的 Yandex 配送机器人",
+        "placeholder": false
+      },
+      {
+        "image": "creative",
+        "caption": "Smeshariki 与《13张牌》",
+        "alt": "Smeshariki 与《13张牌》工作室的照片占位",
+        "placeholder": true
+      },
+      {
+        "image": "club",
+        "caption": "莫斯科的夜晚",
+        "alt": "莫斯科俱乐部内景的照片占位",
+        "placeholder": true
+      },
+      {
+        "image": "dining",
+        "caption": "一顿长晚餐",
+        "alt": "莫斯科或圣彼得堡餐厅内景的照片占位",
+        "placeholder": true
+      },
+      {
+        "image": "plate",
+        "caption": "这一盘",
+        "alt": "现代俄罗斯菜摆盘的照片占位",
+        "placeholder": true
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "04 — 留一句话就够",
+    "title": "跟 Vlad 说一声你要来",
+    "intro": "一共五到十个人。他会亲自回复。",
+    "name": "姓名",
+    "namePlaceholder": "姓和名",
+    "join": "你会来吗？",
+    "joinOptions": [
+      { "id": "in", "label": "我确定去" },
+      { "id": "likely", "label": "很可能会去" },
+      { "id": "other", "label": "其他日期可以" },
+      { "id": "cant", "label": "这次去不了" }
+    ],
+    "otherDates": "你哪段时间方便？",
+    "otherDatesPlaceholder": "例如三月的某一周",
+    "companies": "你想在俄罗斯参观哪些公司？",
+    "companiesPlaceholder": "行业、公司，或你想见的人",
+    "interest": "你在俄罗斯有什么商业兴趣？",
+    "interestPlaceholder": "市场、合作、投资，或其他",
+    "contact": "邮箱、微信或 WhatsApp",
+    "contactPlaceholder": "方便 Vlad 联系你",
+    "tracks": "你感兴趣的路线",
+    "submit": "预报名",
+    "sending": "正在发送…",
+    "errors": {
+      "name": "请填写姓名。",
+      "join": "请选择一项。",
+      "otherDates": "请写下你方便的日期。",
+      "network": "没有发送成功。请再试一次，或直接联系 Vlad。",
+      "config": "表单还没接通。请直接联系 Vlad。"
+    },
+    "thanksTitle": "谢谢！",
+    "thanksBody": "Vlad 会亲自回复你。",
+    "honeypot": "网站"
+  },
+  "footer": {
+    "organized": "组织者：Vladislav Presnyakov，CEIBS GEMBA",
+    "preliminary": "行程为初步安排，可能会调整。",
+    "wechat": "微信",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "邮件",
+    "copied": "微信号已复制",
+    "addLater": "链接待补充"
+  },
+  "loadError": "页面文字没有载入。请刷新后再试。"
+}

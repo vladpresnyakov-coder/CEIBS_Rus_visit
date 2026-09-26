@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-lang="zh">
+<head>
+<meta charset="utf-8" />
+<script>
+try { localStorage.setItem("ceibs-russia-lang", "zh"); } catch (e) {}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>冬天的俄罗斯 · CEIBS同学 · 2027年1月</title>
+<meta name="description" content="给CEIBS同学的一次私人冬季行程。2027年1月24日至31日：莫斯科、捷里别尔卡、圣彼得堡。预报名。" />
+<meta name="theme-color" content="#071421" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://YOUR_DOMAIN/zh.html" />
+<link rel="alternate" hreflang="en" href="https://YOUR_DOMAIN/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://YOUR_DOMAIN/zh.html" />
+<link rel="alternate" hreflang="ru" href="https://YOUR_DOMAIN/ru.html" />
+<link rel="alternate" hreflang="x-default" href="https://YOUR_DOMAIN/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:title" content="冬天的俄罗斯 · CEIBS同学 · 2027年1月" />
+<meta property="og:description" content="给CEIBS同学的一次私人冬季行程。2027年1月24日至31日：莫斯科、捷里别尔卡、圣彼得堡。预报名。" />
+<meta property="og:url" content="https://YOUR_DOMAIN/zh.html" />
+<meta property="og:image" content="https://YOUR_DOMAIN/images/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="雪中的莫斯科红场与圣瓦西里大教堂" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="冬天的俄罗斯 · CEIBS同学 · 2027年1月" />
+<meta name="twitter:description" content="给CEIBS同学的一次私人冬季行程。2027年1月24日至31日：莫斯科、捷里别尔卡、圣彼得堡。预报名。" />
+<meta name="twitter:image" content="https://YOUR_DOMAIN/images/og.jpg" />
+<link rel="stylesheet" href="css/fonts.css" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip" href="#top">跳到正文</a>
+<header class="site-header" id="header">
+  <a class="brand" id="brand" href="#top">CEIBS</a>
+  <nav class="nav-links" id="nav-links"></nav>
+  <div class="header-end">
+    <nav class="lang" aria-label="Language">
+      <a href="index.html" lang="en" hreflang="en" data-lang="en">EN</a>
+      <a href="zh.html" lang="zh-Hans" hreflang="zh-Hans" data-lang="zh" class="is-current">中文</a>
+      <a href="ru.html" lang="ru" hreflang="ru" data-lang="ru">RU</a>
+    </nav>
+    <a class="header-cta" id="header-cta" href="#register">预报名</a>
+  </div>
+</header>
+<script>
+document.querySelectorAll(".lang a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    try { localStorage.setItem("ceibs-russia-lang", link.getAttribute("data-lang")); } catch (e) {}
+  });
+});
+</script>
+<main id="app">
+  <section class="hero" id="top">
+    <img class="hero-img" src="images/hero-red-square-winter.webp" alt="雪中的莫斯科红场与圣瓦西里大教堂" width="1600" height="1067" fetchpriority="high" decoding="async" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy wrap" id="hero-copy"></div>
+  </section>
+  <div id="rest"></div>
+</main>
+<footer class="site-footer" id="footer"></footer>
+<noscript><p class="noscript">此页面需要 JavaScript 才能显示行程和报名表。</p></noscript>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

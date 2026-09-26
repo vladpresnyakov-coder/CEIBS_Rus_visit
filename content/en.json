@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "title": "Russia in Winter · CEIBS classmates · January 2027",
+    "description": "A private winter journey for CEIBS classmates. January 24–31, 2027: Moscow, Teriberka, and St. Petersburg. Pre-register."
+  },
+  "skip": "Skip to content",
+  "nav": {
+    "brand": "CEIBS · Russia 2027",
+    "tracks": "Tracks",
+    "why": "Winter",
+    "program": "Program",
+    "register": "Pre-register",
+    "langLabel": "Language"
+  },
+  "hero": {
+    "eyebrow": "A private journey for CEIBS classmates",
+    "headlineLead": "Russia in Winter.",
+    "headlineRest": "Seen Through Our Eyes.",
+    "subline": "January 24–31, 2027 · Moscow · Murmansk & Teriberka · St. Petersburg",
+    "meta": "5–10 guests",
+    "cta": "Pre-register",
+    "countdownLabel": "Until arrival in Moscow",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "countdownDone": "Arrival day is here.",
+    "imageAlt": "Red Square and Saint Basil’s Cathedral under snow, Moscow"
+  },
+  "tracks": {
+    "eyebrow": "01 — Four tracks",
+    "title": "Come for one reason. Stay for the others.",
+    "intro": "Mix the tracks. Most people do.",
+    "items": [
+      {
+        "id": "business",
+        "title": "Business",
+        "text": "Tell us your business interest, and we will arrange private meetings and company visits for you. Moscow and St. Petersburg, with optional extra days February 1–3."
+      },
+      {
+        "id": "education",
+        "title": "Education",
+        "text": "SKOLKOVO, Russia’s leading business school, plus a lecture on doing business in Russia and meetings with top tech companies like Yandex and Sber."
+      },
+      {
+        "id": "culture",
+        "title": "Culture",
+        "text": "The Kremlin under snow, the Hermitage, the palaces of St. Petersburg, and a Moscow night out."
+      },
+      {
+        "id": "unique",
+        "title": "Unique",
+        "text": "One day at the edge of the Arctic: Teriberka, sled rides, the Barents Sea, and sea urchins and scallops eaten minutes after a diver brings them up."
+      }
+    ],
+    "campusImage": "skolkovo",
+    "campusAlt": "The disk-shaped campus of the Moscow School of Management SKOLKOVO",
+    "campusCaption": "SKOLKOVO, Moscow School of Management."
+  },
+  "why": {
+    "eyebrow": "02 — Why this week",
+    "title": "Why Russia, why winter",
+    "image": "coast",
+    "imageAlt": "Snowy Arctic coast at Teriberka, on the Barents Sea",
+    "tempsNote": "Approximate January averages",
+    "temps": [
+      { "place": "Moscow", "value": "−6°" },
+      { "place": "St. Petersburg", "value": "−5°" },
+      { "place": "Teriberka", "value": "−8 to −10°" }
+    ],
+    "points": [
+      {
+        "title": "Winter, unfiltered",
+        "text": "Snow-covered cities, holiday lights, warm restaurants, and the theatre season. This is Russia when it feels most like itself."
+      },
+      {
+        "title": "Warmer than the rumour",
+        "text": "January sits around −6 °C in Moscow, −5 °C in St. Petersburg, and −8 to −10 °C in Murmansk and Teriberka. The Barents Sea stays open thanks to the Gulf Stream. We send a warm-clothing checklist before you fly."
+      },
+      {
+        "title": "Lights, and daylight",
+        "text": "It is northern-lights season. The polar night is already over, so the Arctic still has daylight."
+      },
+      {
+        "title": "Three Russias, one week",
+        "text": "The business capital, the Arctic, and the imperial capital."
+      }
+    ],
+    "visa": "Visa-free entry for Chinese citizens, valid through 31 December 2027. Other nationalities: the organizers help with an e-visa."
+  },
+  "program": {
+    "eyebrow": "03 — The week",
+    "title": "Day by day",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "hotel": "Hotel",
+    "days": [
+      {
+        "id": "jan24",
+        "weekday": "Sunday",
+        "dayNum": "24",
+        "month": "Jan",
+        "city": "Moscow",
+        "image": "redSquare",
+        "imageAlt": "Red Square under snow on an arrival day in Moscow",
+        "morning": "—",
+        "afternoon": "Arrival, check-in",
+        "evening": "Rest after the flight, optional light dinner",
+        "hotel": "Moscow"
+      },
+      {
+        "id": "jan25",
+        "weekday": "Monday",
+        "dayNum": "25",
+        "month": "Jan",
+        "city": "Moscow",
+        "image": "yandex",
+        "imageAlt": "Yandex headquarters in Moscow",
+        "morning": "Company visit: Yandex",
+        "afternoon": "SKOLKOVO campus tour and lecture",
+        "evening": "Welcome dinner (Tatiana Day, Russian Students’ Day)",
+        "hotel": "Moscow"
+      },
+      {
+        "id": "jan26",
+        "weekday": "Tuesday",
+        "dayNum": "26",
+        "month": "Jan",
+        "city": "Moscow",
+        "image": "basil",
+        "imageAlt": "Saint Basil’s Cathedral on Red Square at night, in the snow",
+        "morning": "Kremlin, Armoury Chamber, Red Square",
+        "afternoon": "Individual business meetings",
+        "evening": "Dinner or a cultural evening",
+        "hotel": "Moscow"
+      },
+      {
+        "id": "jan27",
+        "weekday": "Wednesday",
+        "dayNum": "27",
+        "month": "Jan",
+        "city": "Moscow → Murmansk",
+        "image": "sber",
+        "imageAlt": "Sber headquarters on Gagarin Square, Moscow",
+        "morning": "Company visits, for example Sber and the creative industry",
+        "afternoon": "17:00 flight to Murmansk",
+        "evening": "Arctic dinner",
+        "hotel": "Murmansk"
+      },
+      {
+        "id": "jan28",
+        "weekday": "Thursday",
+        "dayNum": "28",
+        "month": "Jan",
+        "city": "Teriberka",
+        "image": "aurora",
+        "imageAlt": "Northern lights over Teriberka, on the Barents Sea",
+        "morning": "Drive to Teriberka",
+        "afternoon": "Sleds, the Barents Sea, a boat and a diver, fresh sea urchins and scallops",
+        "evening": "Northern lights hunt",
+        "hotel": "Murmansk"
+      },
+      {
+        "id": "jan29",
+        "weekday": "Friday",
+        "dayNum": "29",
+        "month": "Jan",
+        "city": "St. Petersburg",
+        "image": "hermitage",
+        "imageAlt": "The Winter Palace and the frozen Neva in St. Petersburg",
+        "morning": "Free morning",
+        "afternoon": "12:05 flight to St. Petersburg, then the Hermitage or business meetings",
+        "evening": "Mariinsky Theatre, or a night walk through the city",
+        "hotel": "St. Petersburg"
+      },
+      {
+        "id": "jan30",
+        "weekday": "Saturday",
+        "dayNum": "30",
+        "month": "Jan",
+        "city": "St. Petersburg → Moscow",
+        "image": "peterhof",
+        "imageAlt": "The Grand Palace at Peterhof on a winter evening",
+        "morning": "Peterhof or Tsarskoye Selo in winter",
+        "afternoon": "Sapsan high-speed train to Moscow",
+        "evening": "Farewell party at a Moscow club",
+        "hotel": "Moscow"
+      },
+      {
+        "id": "jan31",
+        "weekday": "Sunday",
+        "dayNum": "31",
+        "month": "Jan",
+        "city": "Moscow",
+        "image": "redSquare",
+        "imageAlt": "Red Square in winter, the morning of departure",
+        "morning": "Farewell brunch",
+        "afternoon": "Departures",
+        "evening": "—",
+        "hotel": "—"
+      }
+    ],
+    "extension": "February 1–3 — optional business extension in Moscow.",
+    "backup": "Arctic weather backup: if the road to Teriberka closes, we switch to the nuclear icebreaker Lenin and a reindeer and husky farm.",
+    "backupImage": "lenin",
+    "backupAlt": "The nuclear icebreaker Lenin, now a museum ship in Murmansk",
+    "galleryTitle": "Moments you’ll live",
+    "galleryHint": "Swipe through",
+    "photoToAdd": "Photo to add",
+    "gallery": [
+      {
+        "image": "crab",
+        "caption": "King crab, opened",
+        "alt": "An opened king crab leg",
+        "placeholder": false
+      },
+      {
+        "image": "uni",
+        "caption": "Sea urchin",
+        "alt": "Sea urchin served fresh",
+        "placeholder": false
+      },
+      {
+        "image": "scallop",
+        "caption": "Scallops",
+        "alt": "A plate of seared scallops",
+        "placeholder": false
+      },
+      {
+        "image": "boat",
+        "caption": "On the Arctic sea",
+        "alt": "A small boat on the Arctic sea",
+        "placeholder": false
+      },
+      {
+        "image": "diver",
+        "caption": "The diver",
+        "alt": "Placeholder for a diver bringing up sea urchins and scallops",
+        "placeholder": true
+      },
+      {
+        "image": "aurora",
+        "caption": "Northern lights, Teriberka",
+        "alt": "Northern lights over a weather station in Teriberka",
+        "placeholder": false
+      },
+      {
+        "image": "basil",
+        "caption": "Red Square in the snow",
+        "alt": "Saint Basil’s Cathedral at night in the snow",
+        "placeholder": false
+      },
+      {
+        "image": "hermitage",
+        "caption": "The Hermitage, the Neva frozen",
+        "alt": "The Hermitage across the frozen Neva",
+        "placeholder": false
+      },
+      {
+        "image": "palace",
+        "caption": "Palace Square at night",
+        "alt": "The Winter Palace and Palace Square at night, St. Petersburg",
+        "placeholder": false
+      },
+      {
+        "image": "rover",
+        "caption": "Yandex robots, Moscow",
+        "alt": "Yandex delivery robots crossing a Moscow street",
+        "placeholder": false
+      },
+      {
+        "image": "creative",
+        "caption": "Smeshariki and 13 Cards",
+        "alt": "Placeholder for the Smeshariki and 13 Cards studio",
+        "placeholder": true
+      },
+      {
+        "image": "club",
+        "caption": "A Moscow night",
+        "alt": "Placeholder for a Moscow club interior",
+        "placeholder": true
+      },
+      {
+        "image": "dining",
+        "caption": "A long dinner",
+        "alt": "Placeholder for a Moscow or St. Petersburg restaurant interior",
+        "placeholder": true
+      },
+      {
+        "image": "plate",
+        "caption": "The plate",
+        "alt": "Placeholder for plated modern Russian cuisine",
+        "placeholder": true
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "04 — A note is enough",
+    "title": "Tell Vlad you’re coming",
+    "intro": "Five to ten people. He will write back himself.",
+    "name": "Full name",
+    "namePlaceholder": "First and last name",
+    "join": "Will you join?",
+    "joinOptions": [
+      { "id": "in", "label": "I’m in" },
+      { "id": "likely", "label": "Most likely" },
+      { "id": "other", "label": "I’d join on other dates" },
+      { "id": "cant", "label": "I can’t make it" }
+    ],
+    "otherDates": "Which dates would work for you?",
+    "otherDatesPlaceholder": "A week in March, for example",
+    "companies": "Which companies would you like to visit in Russia?",
+    "companiesPlaceholder": "A sector, a company, or a person you want to meet",
+    "interest": "What business interest do you have in Russia?",
+    "interestPlaceholder": "A market, a partnership, an investment, or something else",
+    "contact": "Email, WeChat, or WhatsApp",
+    "contactPlaceholder": "So Vlad can reach you",
+    "tracks": "Tracks that interest you",
+    "submit": "Pre-register",
+    "sending": "Sending…",
+    "errors": {
+      "name": "Please add your first and last name.",
+      "join": "Please choose one answer.",
+      "otherDates": "Please tell us which dates would work.",
+      "network": "Something went wrong. Please try again, or message Vlad directly.",
+      "config": "The form is not connected yet. Please message Vlad directly."
+    },
+    "thanksTitle": "Thank you!",
+    "thanksBody": "Vlad will get back to you personally.",
+    "honeypot": "Website"
+  },
+  "footer": {
+    "organized": "Organized by Vladislav Presnyakov, CEIBS GEMBA",
+    "preliminary": "The program is preliminary and may be adjusted.",
+    "wechat": "WeChat",
+    "whatsapp": "WhatsApp",
+    "telegram": "Telegram",
+    "email": "Email",
+    "copied": "WeChat ID copied",
+    "addLater": "Link to be added"
+  },
+  "loadError": "The page text did not load. Refresh and try again."
+}

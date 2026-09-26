@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8" />
+<script>
+try { localStorage.setItem("ceibs-russia-lang", "ru"); } catch (e) {}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Россия зимой · однокурсники CEIBS · январь 2027</title>
+<meta name="description" content="Частная зимняя поездка для однокурсников CEIBS. 24–31 января 2027: Москва, Териберка и Санкт-Петербург. Предрегистрация." />
+<meta name="theme-color" content="#071421" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://YOUR_DOMAIN/ru.html" />
+<link rel="alternate" hreflang="en" href="https://YOUR_DOMAIN/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://YOUR_DOMAIN/zh.html" />
+<link rel="alternate" hreflang="ru" href="https://YOUR_DOMAIN/ru.html" />
+<link rel="alternate" hreflang="x-default" href="https://YOUR_DOMAIN/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:title" content="Россия зимой · однокурсники CEIBS · январь 2027" />
+<meta property="og:description" content="Частная зимняя поездка для однокурсников CEIBS. 24–31 января 2027: Москва, Териберка и Санкт-Петербург. Предрегистрация." />
+<meta property="og:url" content="https://YOUR_DOMAIN/ru.html" />
+<meta property="og:image" content="https://YOUR_DOMAIN/images/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Красная площадь и собор Василия Блаженного под снегом, Москва" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Россия зимой · однокурсники CEIBS · январь 2027" />
+<meta name="twitter:description" content="Частная зимняя поездка для однокурсников CEIBS. 24–31 января 2027: Москва, Териберка и Санкт-Петербург. Предрегистрация." />
+<meta name="twitter:image" content="https://YOUR_DOMAIN/images/og.jpg" />
+<link rel="stylesheet" href="css/fonts.css" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip" href="#top">К содержанию</a>
+<header class="site-header" id="header">
+  <a class="brand" id="brand" href="#top">CEIBS</a>
+  <nav class="nav-links" id="nav-links"></nav>
+  <div class="header-end">
+    <nav class="lang" aria-label="Language">
+      <a href="index.html" lang="en" hreflang="en" data-lang="en">EN</a>
+      <a href="zh.html" lang="zh-Hans" hreflang="zh-Hans" data-lang="zh">中文</a>
+      <a href="ru.html" lang="ru" hreflang="ru" data-lang="ru" class="is-current">RU</a>
+    </nav>
+    <a class="header-cta" id="header-cta" href="#register">Предрегистрация</a>
+  </div>
+</header>
+<script>
+document.querySelectorAll(".lang a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    try { localStorage.setItem("ceibs-russia-lang", link.getAttribute("data-lang")); } catch (e) {}
+  });
+});
+</script>
+<main id="app">
+  <section class="hero" id="top">
+    <img class="hero-img" src="images/hero-red-square-winter.webp" alt="Красная площадь и собор Василия Блаженного под снегом, Москва" width="1600" height="1067" fetchpriority="high" decoding="async" />
+    <div class="hero-shade"></div>
+    <div class="hero-copy wrap" id="hero-copy"></div>
+  </section>
+  <div id="rest"></div>
+</main>
+<footer class="site-footer" id="footer"></footer>
+<noscript><p class="noscript">Этой странице нужен JavaScript, чтобы показать программу и форму.</p></noscript>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

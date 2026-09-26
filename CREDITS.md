@@ -1,0 +1,41 @@
+# Photo credits
+
+Photographs are real pictures from Wikimedia Commons. They were resized and converted to WebP for the site. The share image `images/og.jpg` is a 1200×630 crop of the hero. Licenses below still apply to those derivatives.
+
+Replace a photo by putting a new file in `images/` and pointing the matching id in `js/main.js` (`MEDIA`) at it. Keep this list updated.
+
+## Used on the page
+
+| File | What it shows | Author | License | Source |
+| --- | --- | --- | --- | --- |
+| `images/hero-red-square-winter.webp` | Red Square in snow, Moscow, January 2006 | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [File page](https://commons.wikimedia.org/wiki/File:Red_Square_in_cold_winter,_Moscow,_Russia.jpg) |
+| `images/basil-snow-night.webp` | Saint Basil’s Cathedral at night, snow on Red Square | Christian Senger | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Snowy_St._Basil%27s_(3524266063).jpg) |
+| `images/teriberka-coast.webp` | Teriberka coast, Kola Peninsula | Ninara | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Teriberka,_Kola_Peninsula,_Russia_(21697856432).jpg) |
+| `images/teriberka-aurora.webp` | Northern lights over the old weather station, Teriberka | Ted.ns | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [File page](https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D1%81%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D0%B4_%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC_%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%BC%D0%B5%D1%82%D0%B5%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B5%D0%B9.jpg) |
+| `images/hermitage-neva-winter.webp` | Winter Palace / Hermitage and the frozen Neva | Eugene Slobodin | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:Hermitage_und_Frozen_River_Neva.JPG) |
+| `images/peterhof-winter.webp` | Grand Palace at Peterhof, winter evening | Professor Caretaker | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:The_Grand_Palace_in_Peterhof,_the_Church_in_a_winter_evening.JPG) |
+| `images/winter-palace-night.webp` | Winter Palace and Palace Square at night | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [File page](https://commons.wikimedia.org/wiki/File:The_Winter_Palace_and_Palace_Square_at_night,_Saint_Petersburg,_Russia.jpg) |
+| `images/yandex-hq.webp` | Yandex main office, Moscow | WikiFido | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:Yandex_main_office.jpg) |
+| `images/yandex-rover.webp` | Yandex delivery robots, Zubovskaya Square, Moscow, October 2024 | Retired electrician | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [File page](https://commons.wikimedia.org/wiki/File:Moscow,_Zubovskaya_Square,_Yandex_delivery_bots_October_2024_04.jpg) |
+| `images/sber-hq.webp` | Sber building, Gagarin Square, Moscow | Retired electrician | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [File page](https://commons.wikimedia.org/wiki/File:Moscow,_Gagarina_Square,_Sberbank_building_June_2025_04.jpg) |
+| `images/skolkovo-disk.webp` | SKOLKOVO campus, the disk building | MBH | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:Skolkovo_business_school_01.jpg) |
+| `images/icebreaker-lenin.webp` | Nuclear icebreaker Lenin, Murmansk | Godot13 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:RUS-2016-Murmansk-Icebreaker_Lenin_01.jpg) |
+| `images/king-crab.webp` | Opened king crab leg, served in Kirkenes, Norway — not on the Teriberka boat | JIP | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:King_crab_leg.jpg) |
+| `images/sea-urchin.webp` | Sea urchin (uni), photographed at Other Mama in Las Vegas — not on the Teriberka boat | T.Tseng | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Uni,_oyster,_ikura_01.jpg) |
+| `images/scallop-plate.webp` | Seared scallops, Cromer, England — not on the Teriberka boat. The photographer asked to be emailed (Kolforn@gmail.com) when the picture is used outside Wikimedia. | Kolforn | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:-2014-06-12_Red_mullet_with_Pan_Seared_Scallop%E2%80%99s_and_Bacon,_Cromer.JPG) |
+| `images/arctic-boat.webp` | A boat on the Arctic sea, August 2006 — not a winter boat at Teriberka | Ville Miettinen | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Boat_on_the_Arctic_Sea_-_August_2006.jpg) |
+| `images/og.jpg` | Share image, cropped from the Red Square hero | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | Same source as the hero |
+
+Swap the seafood and boat pictures for your own Teriberka frames when you have them: urchins and scallops just opened on the boat, and the boat itself in winter.
+
+## Placeholders
+
+These are drawn frames, not photographs. Each SVG file has a comment describing the picture that should replace it.
+
+| File | Put this photo here |
+| --- | --- |
+| `images/placeholder-arctic-diver.svg` | A diver in the Barents Sea beside a small boat, with sea urchins or scallops just brought up. Your own photo. Not an AI image of the place. |
+| `images/placeholder-moscow-club.svg` | A stylish Moscow club interior with lights, ideally the farewell venue. Only a photo you have rights to use. |
+| `images/placeholder-creative-studio.svg` | Smeshariki and/or «13 карт» (13 Cards). Official art is not freely licensed. Use a photo from the visit, or artwork you have permission to publish. |
+| `images/placeholder-restaurant.svg` | A Moscow or St. Petersburg restaurant interior, warmly lit. A photo of the welcome dinner or the farewell brunch is the right one. |
+| `images/placeholder-russian-plate.svg` | Plated modern Russian cuisine from a restaurant on this trip. |

@@ -1,6 +1,6 @@
 # Russia in Winter — CEIBS classmates, January 2027
 
-A one-page promo site for a private trip organized by Vladislav Presnyakov. English, simplified Chinese, and Russian. It collects pre-registrations.
+A one-page promo site for a private trip organized by russian cohort GEMBA 2025. English, simplified Chinese, and Russian. It collects pre-registrations.
 
 ## Sections
 

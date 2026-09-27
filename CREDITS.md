@@ -1,6 +1,6 @@
 # Photo credits
 
-Most photographs are real pictures from Wikimedia Commons and Unsplash, resized and converted to WebP for the site. The first-screen hero and the share image `images/og.jpg` (a 1200×630 crop of that hero) were provided by the organizer. Licenses below still apply to the Commons/Unsplash derivatives.
+Most photographs are real pictures from Wikimedia Commons and Unsplash, resized and converted to WebP for the site. The first-screen hero, the share image `images/og.jpg` (a 1200×630 crop of that hero), and the organizer frames listed below were provided by the organizer. Licenses below still apply to the Commons/Unsplash derivatives.
 
 Replace a photo by putting a new file in `images/` and pointing the matching id in `js/main.js` (`MEDIA`) at it. Keep this list updated.
 
@@ -9,8 +9,13 @@ Replace a photo by putting a new file in `images/` and pointing the matching id 
 | File | What it shows | Author | License | Source |
 | --- | --- | --- | --- | --- |
 | `images/hero-red-square-winter.webp` | Red Square / Kremlin winter view used on the first screen | Provided by organizer | — | Organizer photo |
+| `images/tinkoff-office.webp` | T-Bank office interior. Left panel of the tracks collage | Provided by organizer | — | Organizer photo |
+| `images/vdnkh-ice.webp` | Ice rink at VDNKh, Moscow. Third panel of the tracks collage | Provided by organizer | — | Organizer photo |
+| `images/whale-fluke.webp` | Whale fluke in Arctic waters. Fourth panel of the tracks collage | Provided by organizer | — | Organizer photo |
+| `images/winter-festival.webp` | Winter folk festival. Photo for “02 — Why this week” / Three Russias | Provided by organizer | — | Organizer photo |
+| `images/campus-collage.webp` | Four-panel collage: T-Bank, SKOLKOVO fragment, VDNKh ice, whale fluke | Provided by organizer (composite; SKOLKOVO panel from Commons derivative below) | — | Organizer photos + `skolkovo-disk.webp` |
 | `images/basil-snow-night.webp` | Saint Basil’s Cathedral at night, snow on Red Square | Christian Senger | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Snowy_St._Basil%27s_(3524266063).jpg) |
-| `images/teriberka-coast.webp` | Teriberka coast, Kola Peninsula | Ninara | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Teriberka,_Kola_Peninsula,_Russia_(21697856432).jpg) |
+| `images/teriberka-coast.webp` | Teriberka coast, Kola Peninsula. Still in the media library; no longer the Why-section lead | Ninara | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Teriberka,_Kola_Peninsula,_Russia_(21697856432).jpg) |
 | `images/teriberka-aurora.webp` | Northern lights over the old weather station, Teriberka | Ted.ns | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [File page](https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D1%81%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D0%B4_%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC_%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%BC%D0%B5%D1%82%D0%B5%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B5%D0%B9.jpg) |
 | `images/hermitage-neva-winter.webp` | Winter Palace / Hermitage and the frozen Neva | Eugene Slobodin | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [File page](https://commons.wikimedia.org/wiki/File:Hermitage_und_Frozen_River_Neva.JPG) |
 | `images/petersburg-winter-bridge.webp` | Bridge over a frozen river, winter St. Petersburg. Friday card and the gallery | Evgenii Zolotarev | [Unsplash License](https://unsplash.com/license) | [Photo](https://unsplash.com/photos/a-bridge-over-a-frozen-river-with-a-building-in-the-background-yESKxiijQ3w) |

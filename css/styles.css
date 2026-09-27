@@ -341,6 +341,13 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
   display: block;
 }
 
+.campus.is-collage img {
+  max-height: none;
+  aspect-ratio: 2400 / 834;
+  object-fit: cover;
+  object-position: center;
+}
+
 .campus figcaption {
   margin-top: .7rem;
   color: var(--muted);

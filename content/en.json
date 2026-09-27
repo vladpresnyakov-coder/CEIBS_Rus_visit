@@ -53,29 +53,29 @@
         "text": "One day at the edge of the Arctic: Teriberka, sled rides, the Barents Sea, and sea urchins and scallops eaten minutes after a diver brings them up."
       }
     ],
-    "campusImage": "skolkovo",
-    "campusAlt": "The disk-shaped campus of the Moscow School of Management SKOLKOVO",
-    "campusCaption": "SKOLKOVO, Moscow School of Management."
+    "campusImage": "campusCollage",
+    "campusAlt": "Four frames left to right: a T-Bank office, the SKOLKOVO campus, the ice rink at VDNKh, and a whale fluke in Arctic waters",
+    "campusCaption": "T-Bank, SKOLKOVO, the VDNKh ice rink, and the Arctic — one week."
   },
   "why": {
     "eyebrow": "02 — Why this week",
     "title": "Why Russia, why winter",
-    "image": "coast",
-    "imageAlt": "Snowy Arctic coast at Teriberka, on the Barents Sea",
+    "image": "festival",
+    "imageAlt": "A winter folk festival in the snow, with wooden towers and a crowd in traditional dress",
     "tempsNote": "Approximate January averages",
     "temps": [
       { "place": "Moscow", "value": "−6°" },
       { "place": "St. Petersburg", "value": "−5°" },
-      { "place": "Teriberka", "value": "−8 to −10°" }
+      { "place": "Teriberka", "value": "−10 to −20°" }
     ],
     "points": [
       {
         "title": "Winter, unfiltered",
-        "text": "Snow-covered cities, holiday lights, warm restaurants, and the theatre season. This is Russia when it feels most like itself."
+        "text": "Snow-covered cities, holiday lights, warm restaurants, and a Russian banya. Russian soul, winter colour, the world’s best cuisine, business and technology — what you will not find anywhere else."
       },
       {
         "title": "Warmer than the rumour",
-        "text": "January sits around −6 °C in Moscow, −5 °C in St. Petersburg, and −8 to −10 °C in Murmansk and Teriberka. The Barents Sea stays open thanks to the Gulf Stream. We send a warm-clothing checklist before you fly."
+        "text": "January sits around −6 °C in Moscow, −5 °C in St. Petersburg, and −10 to −20 °C in Murmansk and Teriberka. The Barents Sea stays open thanks to the Gulf Stream. We send a warm-clothing checklist before you fly."
       },
       {
         "title": "Lights, and daylight",

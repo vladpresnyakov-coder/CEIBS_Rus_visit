@@ -29,6 +29,11 @@ const MEDIA = {
   rover: { src: "images/yandex-rover.webp", w: 1400, h: 1050 },
   sber: { src: "images/sber-hq.webp", w: 1600, h: 1200 },
   skolkovo: { src: "images/skolkovo-disk.webp", w: 1600, h: 1200 },
+  campusCollage: { src: "images/campus-collage.webp", w: 2400, h: 834 },
+  tinkoff: { src: "images/tinkoff-office.webp", w: 1059, h: 585 },
+  vdnkhIce: { src: "images/vdnkh-ice.webp", w: 927, h: 812 },
+  whale: { src: "images/whale-fluke.webp", w: 1200, h: 1178 },
+  festival: { src: "images/winter-festival.webp", w: 1600, h: 1227 },
   lenin: { src: "images/icebreaker-lenin.webp", w: 1400, h: 933 },
   uni: { src: "images/sea-urchin.webp", w: 1400, h: 1050 },
   crab: { src: "images/king-crab.webp", w: 1400, h: 1050 },
@@ -178,7 +183,7 @@ function render(copy) {
         <p class="lede">${esc(copy.tracks.intro)}</p>
         <div class="track-grid">${tracks}</div>
       </div>
-      <figure class="campus reveal">
+      <figure class="campus ${copy.tracks.campusImage === "campusCollage" ? "is-collage" : ""} reveal">
         ${imgHTML(copy.tracks.campusImage, copy.tracks.campusAlt, { sizes: "100vw" })}
         <figcaption class="wrap">${esc(copy.tracks.campusCaption)}</figcaption>
       </figure>

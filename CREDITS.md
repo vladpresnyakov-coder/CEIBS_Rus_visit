@@ -1,6 +1,6 @@
 # Photo credits
 
-Photographs are real pictures from Wikimedia Commons and Unsplash. They were resized and converted to WebP for the site. The share image `images/og.jpg` is a 1200×630 crop of the hero. Licenses below still apply to those derivatives.
+Most photographs are real pictures from Wikimedia Commons and Unsplash, resized and converted to WebP for the site. The first-screen hero and the share image `images/og.jpg` (a 1200×630 crop of that hero) were provided by the organizer. Licenses below still apply to the Commons/Unsplash derivatives.
 
 Replace a photo by putting a new file in `images/` and pointing the matching id in `js/main.js` (`MEDIA`) at it. Keep this list updated.
 
@@ -8,7 +8,7 @@ Replace a photo by putting a new file in `images/` and pointing the matching id 
 
 | File | What it shows | Author | License | Source |
 | --- | --- | --- | --- | --- |
-| `images/hero-red-square-winter.webp` | Red Square in snow, Moscow, January 2006 | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [File page](https://commons.wikimedia.org/wiki/File:Red_Square_in_cold_winter,_Moscow,_Russia.jpg) |
+| `images/hero-red-square-winter.webp` | Red Square / Kremlin winter view used on the first screen | Provided by organizer | — | Organizer photo |
 | `images/basil-snow-night.webp` | Saint Basil’s Cathedral at night, snow on Red Square | Christian Senger | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Snowy_St._Basil%27s_(3524266063).jpg) |
 | `images/teriberka-coast.webp` | Teriberka coast, Kola Peninsula | Ninara | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Teriberka,_Kola_Peninsula,_Russia_(21697856432).jpg) |
 | `images/teriberka-aurora.webp` | Northern lights over the old weather station, Teriberka | Ted.ns | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [File page](https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%BE%D0%B5_%D1%81%D0%B8%D1%8F%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D0%B4_%D0%B7%D0%B0%D0%B1%D1%80%D0%BE%D1%88%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC_%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%BC%D0%B5%D1%82%D0%B5%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B5%D0%B9.jpg) |
@@ -27,7 +27,7 @@ Replace a photo by putting a new file in `images/` and pointing the matching id 
 | `images/arctic-boat.webp` | A boat on the Arctic sea, August 2006 — not a winter boat at Teriberka | Ville Miettinen | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Boat_on_the_Arctic_Sea_-_August_2006.jpg) |
 | `images/moscow-club.webp` | Nightclub with a DJ and a crowd. Used for the Moscow night / farewell party. Not a named Moscow venue | Joes Valentine | [Unsplash License](https://unsplash.com/license) | [Photo](https://unsplash.com/photos/a-dj-pumps-up-the-crowd-at-a-nightclub-IRIIr3zVy2k) |
 | `images/russian-plate.webp` | Close-up of a plated dish. Stand-in for the plate slot until a Russian course from the trip is available | Edgar Cavazos | [Unsplash License](https://unsplash.com/license) | [Photo](https://unsplash.com/photos/a-close-up-of-a-plate-of-food-on-a-table-3-iRH6cJLyw) |
-| `images/og.jpg` | Share image, cropped from the Red Square hero | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | Same source as the hero |
+| `images/og.jpg` | Share image, cropped from the Red Square hero | Provided by organizer | — | Same source as the hero |
 
 Swap the seafood and boat pictures for your own Teriberka frames when you have them: urchins and scallops just opened on the boat, and the boat itself in winter.
 

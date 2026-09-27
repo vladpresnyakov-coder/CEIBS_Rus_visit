@@ -110,8 +110,8 @@ function render(copy) {
   document.getElementById("hero-copy").innerHTML = `
     <p class="eyebrow">${esc(copy.hero.eyebrow)}</p>
     <h1><span class="line">${esc(copy.hero.headlineLead)}</span><span class="line">${esc(copy.hero.headlineRest)}</span></h1>
+    <p class="hero-dates">${esc(copy.hero.dates)}</p>
     <p class="subline">${esc(copy.hero.subline)}</p>
-    <p class="hero-meta">${esc(copy.hero.meta)}</p>
     <div class="hero-actions"><a class="btn" href="#register">${esc(copy.hero.cta)}</a></div>
     <div class="countdown" role="timer" aria-label="${esc(copy.hero.countdownLabel)}">
       <p class="countdown-label" id="countdown-label">${esc(copy.hero.countdownLabel)}</p>

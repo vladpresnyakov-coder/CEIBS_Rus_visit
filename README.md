@@ -5,11 +5,11 @@ A one-page promo site for a private trip organized by russian cohort GEMBA 2025.
 ## Sections
 
 1. **Hero** — Red Square in snow, the two-line headline, dates, a countdown to 24 January 2027 (midnight, Moscow time), and a button to the form.
-2. **Four tracks** — Business, Education, Culture, Unique. Guests can mix them. The SKOLKOVO disk sits under the cards.
+2. **Four tracks** — Business, Education, Culture, Unique. Guests can mix them. Each track card has its own photo underneath (T-Bank, SKOLKOVO, VDNKh ice, whale).
 3. **Why Russia, why winter** — four short points, January temperatures, the Gulf Stream, a clothing checklist, northern lights, and the visa line.
 4. **Program** — day by day from 24 to 31 January, the 1–3 February extension, and a horizontal strip of moments.
-5. **Pre-registration** — name, whether they will come, places to visit, business interest, optional contact and tracks.
-6. **Footer** — organizer line and WeChat, WhatsApp, Telegram, email.
+5. **Pre-registration** — name, whether they will come, phone and WeChat (required unless they chose “I can’t”), accompanying adults/children with ages, places to visit, business interest, and tracks.
+6. **Footer** — organizer line and the contact channels filled in `js/config.js` (WeChat QR for Vlad is wired).
 
 ## Headline options
 
@@ -74,31 +74,39 @@ To change which photo a day uses, edit that day’s `"image"` value in all three
 
 The endpoint is the `googleScriptUrl` string in `js/config.js`. Leave it empty until the sheet is ready. If it is empty and `formspreeUrl` is also empty, the form tells the guest to message Vlad instead of pretending the note was sent.
 
-Each submission includes `lang` (`en`, `zh`, or `ru`), so you can see which language they used.
+Each submission includes `lang` (`en`, `zh`, or `ru`), so you can see which language they used. After a successful send, the page shows “Your pre-registration is accepted.”
 
 1. Create a Google Sheet.
 2. Extensions → Apps Script. Delete the sample and paste this:
 
 ```javascript
+var NOTIFY_EMAIL = "vlad.presnyakov@gmail.com";
+
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   var data = JSON.parse(e.postData.contents);
+  var headers = [
+    "timestamp",
+    "lang",
+    "fullName",
+    "join",
+    "joinLabel",
+    "otherDates",
+    "companies",
+    "businessInterest",
+    "phone",
+    "wechat",
+    "contact",
+    "adults",
+    "children",
+    "childAges",
+    "tracks",
+    "tracksLabels"
+  ];
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow([
-      "timestamp",
-      "lang",
-      "fullName",
-      "join",
-      "joinLabel",
-      "otherDates",
-      "companies",
-      "businessInterest",
-      "contact",
-      "tracks",
-      "tracksLabels"
-    ]);
+    sheet.appendRow(headers);
   }
-  sheet.appendRow([
+  var row = [
     new Date(),
     data.lang || "",
     data.fullName || "",
@@ -107,23 +115,63 @@ function doPost(e) {
     data.otherDates || "",
     data.companies || "",
     data.businessInterest || "",
+    data.phone || "",
+    data.wechat || "",
     data.contact || "",
+    data.adults || "",
+    data.children || "",
+    data.childAges || "",
     data.tracks || "",
     data.tracksLabels || ""
-  ]);
+  ];
+  sheet.appendRow(row);
+  try {
+    emailExcelCopy_(sheet, data);
+  } catch (err) {
+    // Sheet write still succeeded.
+  }
   return ContentService
     .createTextOutput(JSON.stringify({ ok: true }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function emailExcelCopy_(sheet, latest) {
+  var values = sheet.getDataRange().getValues();
+  var csv = values.map(function (row) {
+    return row.map(function (cell) {
+      var text = String(cell == null ? "" : cell);
+      if (/[",\n]/.test(text)) return '"' + text.replace(/"/g, '""') + '"';
+      return text;
+    }).join(",");
+  }).join("\n");
+  var blob = Utilities.newBlob(csv, "application/vnd.ms-excel", "ceibs-russia-registrations.xls");
+  MailApp.sendEmail({
+    to: NOTIFY_EMAIL,
+    subject: "CEIBS Russia pre-registration: " + (latest.fullName || "new"),
+    body: [
+      "New pre-registration saved to the sheet.",
+      "",
+      "Name: " + (latest.fullName || ""),
+      "Join: " + (latest.joinLabel || latest.join || ""),
+      "Phone: " + (latest.phone || ""),
+      "WeChat: " + (latest.wechat || ""),
+      "Adults: " + (latest.adults || ""),
+      "Children: " + (latest.children || ""),
+      "Child ages: " + (latest.childAges || ""),
+      "Lang: " + (latest.lang || "")
+    ].join("\n"),
+    attachments: [blob]
+  });
 }
 ```
 
 3. Deploy → New deployment → type: Web app.
 4. Execute as: **Me**. Who has access: **Anyone**.
-5. Authorize the script when Google asks. Copy the URL that ends in `/exec`.
+5. Authorize the script when Google asks (including Gmail send permission). Copy the URL that ends in `/exec`.
 6. Paste it into `googleScriptUrl` in `js/config.js`.
 7. Redeploy the site. Send a test entry from the page.
 
-`join` is a stable code: `in`, `likely`, `other`, `cant`. `joinLabel` is the button text in the guest’s language. `tracks` is the same kind of code list (`business, culture`). `tracksLabels` is the translated names.
+`join` is a stable code: `in`, `likely`, `other`, `cant`. `joinLabel` is the button text in the guest’s language. `tracks` is the same kind of code list (`business, culture`). `tracksLabels` is the translated names. Phone and WeChat are required unless the guest chose `cant`.
 
 The browser sends the note with `mode: "no-cors"`, because Apps Script does not answer a normal browser preflight. The page treats a completed request as success and cannot read an error body back from Google. If a test row never appears, open the deployment again and confirm access is **Anyone**, then redeploy and use the new `/exec` URL.
 
@@ -135,12 +183,12 @@ Create a form at [formspree.io](https://formspree.io), copy the endpoint (`https
 
 In `js/config.js`, fill in `contacts`:
 
-- `wechat` — a WeChat ID (a tap copies it), or a full `https://` link to a QR page
+- `wechat` — path to a QR image (for example `images/wechat-qr.webp`; a tap opens the QR), a WeChat ID (a tap copies it), or a full `https://` link
 - `whatsapp` — phone number with country code, for example `+79991234567`
 - `telegram` — username, without `@`
 - `email` — an email address
 
-Empty buttons stay visible and do nothing, so the layout is ready before the links are.
+Empty channels are hidden. Do not invent contact methods that are not configured.
 
 ## Swap a photo
 

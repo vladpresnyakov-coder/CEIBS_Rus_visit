@@ -55,7 +55,13 @@
     ],
     "campusImage": "campusCollage",
     "campusAlt": "Four frames left to right: a T-Bank office, the SKOLKOVO campus, the ice rink at VDNKh, and a whale fluke in Arctic waters",
-    "campusCaption": "T-Bank, SKOLKOVO, the VDNKh ice rink, and the Arctic — one week."
+    "campusCaption": "T-Bank, SKOLKOVO, the VDNKh ice rink, and the Arctic — one week.",
+    "photoAlts": {
+      "business": "T-Bank office interior",
+      "education": "SKOLKOVO campus disk building",
+      "culture": "Ice rink at VDNKh, Moscow",
+      "unique": "Whale fluke in Arctic waters"
+    }
   },
   "why": {
     "eyebrow": "02 — Why this week",
@@ -111,8 +117,8 @@
         "dayNum": "24",
         "month": "Jan",
         "city": "Moscow",
-        "image": "redSquare",
-        "imageAlt": "Red Square under snow on an arrival day in Moscow",
+        "image": "kremlin",
+        "imageAlt": "The Moscow Kremlin in winter, seen across the Moskva River",
         "morning": "—",
         "afternoon": "Arrival, check-in",
         "evening": "Rest after the flight, optional light dinner",
@@ -202,8 +208,8 @@
         "dayNum": "31",
         "month": "Jan",
         "city": "Moscow",
-        "image": "redSquare",
-        "imageAlt": "Red Square in winter, the morning of departure",
+        "image": "izba",
+        "imageAlt": "A Russian izba tea table with a samovar, blini, and sushki",
         "morning": "Farewell brunch",
         "afternoon": "Departures",
         "evening": "—",
@@ -239,14 +245,14 @@
       {
         "image": "boat",
         "caption": "On the Arctic sea",
-        "alt": "A small boat on the Arctic sea",
+        "alt": "Rocky Arctic shore with waves breaking on the stones",
         "placeholder": false
       },
       {
         "image": "diver",
         "caption": "The diver",
-        "alt": "Placeholder for a diver bringing up sea urchins and scallops",
-        "placeholder": true
+        "alt": "A diver in a drysuit on a boat deck, Arctic mountains behind",
+        "placeholder": false
       },
       {
         "image": "aurora",
@@ -299,7 +305,7 @@
     ]
   },
   "form": {
-    "eyebrow": "04 — A note is enough",
+    "eyebrow": "04 — A message is enough",
     "title": "Tell Vlad you’re coming",
     "intro": "Leave a short note below.",
     "name": "Full name",
@@ -329,8 +335,15 @@
     "companiesPlaceholder": "A city, a landmark, or somewhere you want to see",
     "interest": "What business interest do you have in Russia?",
     "interestPlaceholder": "A market, a partnership, an investment, or something else",
-    "contact": "Email, WeChat, or WhatsApp",
-    "contactPlaceholder": "So Vlad can reach you",
+    "phone": "Phone",
+    "phonePlaceholder": "With country code",
+    "wechat": "WeChat",
+    "wechatPlaceholder": "Your WeChat ID",
+    "companions": "Who is coming with you?",
+    "adults": "Adults accompanying you",
+    "children": "Children accompanying you",
+    "childAges": "Ages of the children",
+    "childAgesPlaceholder": "For example: 7, 12",
     "tracks": "Tracks that interest you",
     "submit": "Pre-register",
     "sending": "Sending…",
@@ -338,10 +351,13 @@
       "name": "Please add your first and last name.",
       "join": "Please choose one answer.",
       "otherDates": "Please tell us which dates would work.",
+      "phone": "Please add a phone number.",
+      "wechat": "Please add your WeChat ID.",
+      "childAges": "Please add the children’s ages.",
       "network": "Something went wrong. Please try again, or message Vlad directly.",
       "config": "The form is not connected yet. Please message Vlad directly."
     },
-    "thanksTitle": "Thank you!",
+    "thanksTitle": "Your pre-registration is accepted.",
     "thanksBody": "Vlad will get back to you personally.",
     "honeypot": "Website"
   },
@@ -353,7 +369,9 @@
     "telegram": "Telegram",
     "email": "Email",
     "copied": "WeChat ID copied",
-    "addLater": "Link to be added"
+    "addLater": "Link to be added",
+    "wechatQrAlt": "WeChat QR code for Vlad (王鹏)",
+    "closeQr": "Close"
   },
   "loadError": "The page text did not load. Refresh and try again."
 }

@@ -329,6 +329,26 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
 .track h3 { margin: .9rem 0 .35rem; font-size: 1.45rem; }
 .track p { margin: 0; color: rgba(244, 247, 248, .86); }
 
+.track-photo {
+  margin-top: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.track-photo img {
+  width: 100%;
+  height: 9.5rem;
+  max-height: min(22vh, 180px);
+  object-fit: cover;
+  display: block;
+}
+
+.tracks-caption {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
 .campus {
   margin: 2.5rem 0 0;
   position: relative;
@@ -554,9 +574,25 @@ html[lang="zh-Hans"] .slots h3 { letter-spacing: .06em; text-transform: none; fo
   margin-bottom: .4rem;
   font-weight: 600;
 }
+.field-row {
+  display: grid;
+  gap: .75rem;
+}
+@media (min-width: 560px) {
+  .field-row { grid-template-columns: 1fr 1fr; }
+}
+.companions {
+  border: 1px solid var(--line-ink);
+  padding: .9rem .85rem .35rem;
+  margin-bottom: 1rem;
+}
+.companions legend {
+  padding: 0 .25rem;
+  margin-bottom: .55rem;
+}
 .req { color: #8a5a1a; }
 
-input[type="text"], textarea {
+input[type="text"], input[type="tel"], input[type="number"], textarea {
   width: 100%;
   background: #fff;
   color: var(--ink);
@@ -632,6 +668,42 @@ textarea { min-height: 6.5rem; resize: vertical; }
 .contact.is-empty { color: var(--muted); cursor: default; }
 .prelim { margin: .4rem 0 0; color: var(--muted); font-size: .9rem; }
 .copied { margin: 0; color: var(--aurora); min-height: 1.2rem; }
+
+.wechat-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+.wechat-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(4, 12, 20, .78);
+  cursor: pointer;
+}
+.wechat-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(22rem, 100%);
+  background: #fff;
+  color: var(--ink);
+  padding: 1rem 1rem 1.1rem;
+  display: grid;
+  gap: .85rem;
+  justify-items: center;
+}
+.wechat-modal-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.wechat-modal-close {
+  width: 100%;
+  justify-content: center;
+}
 
 .noscript, .load-error {
   margin: 1rem;

@@ -55,7 +55,13 @@
     ],
     "campusImage": "campusCollage",
     "campusAlt": "四格从左到右：T-Bank 办公室、SKOLKOVO 校园、全俄展览中心冰场，以及北极海域的鲸尾",
-    "campusCaption": "T-Bank、SKOLKOVO、全俄展览中心冰场，还有北极——一周之内。"
+    "campusCaption": "T-Bank、SKOLKOVO、全俄展览中心冰场，还有北极——一周之内。",
+    "photoAlts": {
+      "business": "T-Bank 办公室内景",
+      "education": "SKOLKOVO 校园圆盘建筑",
+      "culture": "莫斯科全俄展览中心冰场",
+      "unique": "北极海域的鲸尾"
+    }
   },
   "why": {
     "eyebrow": "02 — 为什么是这一周",
@@ -111,8 +117,8 @@
         "dayNum": "24",
         "month": "1月",
         "city": "莫斯科",
-        "image": "redSquare",
-        "imageAlt": "抵达日，雪中的莫斯科红场",
+        "image": "kremlin",
+        "imageAlt": "冬日莫斯科河对岸的克里姆林宫",
         "morning": "—",
         "afternoon": "抵达，入住",
         "evening": "飞行后休息，可选一顿轻晚餐",
@@ -202,8 +208,8 @@
         "dayNum": "31",
         "month": "1月",
         "city": "莫斯科",
-        "image": "redSquare",
-        "imageAlt": "离开那天早上的冬日红场",
+        "image": "izba",
+        "imageAlt": "俄罗斯木屋茶桌：茶炊、薄饼与酥圈",
         "morning": "告别早午餐",
         "afternoon": "离开",
         "evening": "—",
@@ -239,14 +245,14 @@
       {
         "image": "boat",
         "caption": "在北冰洋上",
-        "alt": "北冰洋上的一艘小船",
+        "alt": "北极岩岸与拍岸的浪花",
         "placeholder": false
       },
       {
         "image": "diver",
         "caption": "潜水员",
-        "alt": "潜水员打捞海胆和扇贝的照片占位",
-        "placeholder": true
+        "alt": "船甲板上穿着干式潜水服的潜水员，身后是北极山脉",
+        "placeholder": false
       },
       {
         "image": "aurora",
@@ -299,7 +305,7 @@
     ]
   },
   "form": {
-    "eyebrow": "04 — 留一句话就够",
+    "eyebrow": "04 — 一条消息就够",
     "title": "跟 Vlad 说一声你要来",
     "intro": "在下方留一句简短说明即可。",
     "name": "姓名",
@@ -329,8 +335,15 @@
     "companiesPlaceholder": "城市、景点，或你想去的地方",
     "interest": "你在俄罗斯有什么商业兴趣？",
     "interestPlaceholder": "市场、合作、投资，或其他",
-    "contact": "邮箱、微信或 WhatsApp",
-    "contactPlaceholder": "方便 Vlad 联系你",
+    "phone": "电话",
+    "phonePlaceholder": "含国家区号",
+    "wechat": "微信",
+    "wechatPlaceholder": "你的微信号",
+    "companions": "谁会和你一起来？",
+    "adults": "同行成人",
+    "children": "同行儿童",
+    "childAges": "儿童年龄",
+    "childAgesPlaceholder": "例如：7、12",
     "tracks": "你感兴趣的路线",
     "submit": "预报名",
     "sending": "正在发送…",
@@ -338,10 +351,13 @@
       "name": "请填写姓名。",
       "join": "请选择一项。",
       "otherDates": "请写下你方便的日期。",
+      "phone": "请填写电话。",
+      "wechat": "请填写微信号。",
+      "childAges": "请填写儿童年龄。",
       "network": "没有发送成功。请再试一次，或直接联系 Vlad。",
       "config": "表单还没接通。请直接联系 Vlad。"
     },
-    "thanksTitle": "谢谢！",
+    "thanksTitle": "您的预报名已受理。",
     "thanksBody": "Vlad 会亲自回复你。",
     "honeypot": "网站"
   },
@@ -353,7 +369,9 @@
     "telegram": "Telegram",
     "email": "邮件",
     "copied": "微信号已复制",
-    "addLater": "链接待补充"
+    "addLater": "链接待补充",
+    "wechatQrAlt": "Vlad（王鹏）的微信二维码",
+    "closeQr": "关闭"
   },
   "loadError": "页面文字没有载入。请刷新后再试。"
 }

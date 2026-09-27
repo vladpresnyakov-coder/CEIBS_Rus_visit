@@ -35,27 +35,37 @@ const MEDIA = {
   whale: { src: "images/whale-fluke.webp", w: 1200, h: 1178 },
   festival: { src: "images/winter-festival.webp", w: 1600, h: 1227 },
   crowns: { src: "images/crowns-regalia.webp", w: 1600, h: 1243 },
+  kremlin: { src: "images/kremlin-winter.webp", w: 1600, h: 1066 },
+  izba: { src: "images/izba-tea.webp", w: 1600, h: 1066 },
   lenin: { src: "images/icebreaker-lenin.webp", w: 1400, h: 933 },
   uni: { src: "images/sea-urchin.webp", w: 1400, h: 1050 },
   crab: { src: "images/king-crab.webp", w: 1400, h: 1050 },
   scallop: { src: "images/scallop-plate.webp", w: 1400, h: 1543 },
-  boat: { src: "images/arctic-boat.webp", w: 1400, h: 1049 },
-  diver: { src: "images/placeholder-arctic-diver.svg", w: 900, h: 1200 },
+  boat: { src: "images/rocky-shore.webp", w: 1600, h: 1200 },
+  diver: { src: "images/arctic-diver.webp", w: 1200, h: 1600 },
   club: { src: "images/moscow-club.webp", w: 1600, h: 1069 },
   creative: { src: "images/placeholder-creative-studio.svg", w: 900, h: 1200 },
-  dining: { src: "images/placeholder-restaurant.svg", w: 900, h: 1200 },
+  dining: { src: "images/izba-tea.webp", w: 1600, h: 1066 },
   plate: { src: "images/russian-plate.webp", w: 1600, h: 1059 },
+  wechatQr: { src: "images/wechat-qr.webp", w: 888, h: 1191 },
+};
+
+const TRACK_PHOTOS = {
+  business: "tinkoff",
+  education: "skolkovo",
+  culture: "vdnkhIce",
+  unique: "whale",
 };
 
 const DAY_FRAME = {
-  jan24: "center 42%",
+  jan24: "center 45%",
   jan25: "center",
   jan26: "center 40%",
   jan27: "center",
   jan28: "center 28%",
   jan29: "center",
   jan30: "center 36%",
-  jan31: "68% 40%",
+  jan31: "center 42%",
 };
 
 const ICONS = {
@@ -129,13 +139,18 @@ function render(copy) {
     </div>
   `;
 
-  const tracks = copy.tracks.items.map((item, index) => `
+  const tracks = copy.tracks.items.map((item, index) => {
+    const photoId = TRACK_PHOTOS[item.id];
+    const photoAlt = (copy.tracks.photoAlts && copy.tracks.photoAlts[item.id]) || item.title;
+    return `
     <article class="track reveal">
       ${ICONS[item.id] || ""}
       <h3>${esc(item.title)}</h3>
       <p>${esc(item.text)}</p>
+      ${photoId ? `<div class="track-photo">${imgHTML(photoId, photoAlt, { sizes: "(min-width: 980px) 22vw, (min-width: 720px) 45vw, 100vw" })}</div>` : ""}
     </article>
-  `).join("");
+  `;
+  }).join("");
 
   const days = copy.program.days.map((day) => `
     <li class="day reveal" id="${esc(day.id)}">
@@ -182,12 +197,9 @@ function render(copy) {
         <p class="eyebrow">${esc(copy.tracks.eyebrow)}</p>
         <h2>${esc(copy.tracks.title)}</h2>
         <p class="lede">${esc(copy.tracks.intro)}</p>
-        <div class="track-grid">${tracks}</div>
+        <div class="track-grid has-photos">${tracks}</div>
+        <p class="tracks-caption">${esc(copy.tracks.campusCaption)}</p>
       </div>
-      <figure class="campus ${copy.tracks.campusImage === "campusCollage" ? "is-collage" : ""} reveal">
-        ${imgHTML(copy.tracks.campusImage, copy.tracks.campusAlt, { sizes: "100vw" })}
-        <figcaption class="wrap">${esc(copy.tracks.campusCaption)}</figcaption>
-      </figure>
     </section>
     <section class="section why" id="why">
       <div class="wrap why-grid">
@@ -258,10 +270,36 @@ function render(copy) {
               <label for="interest">${esc(copy.form.interest)}</label>
               <textarea id="interest" name="businessInterest" placeholder="${esc(copy.form.interestPlaceholder)}"></textarea>
             </div>
-            <div class="field">
-              <label for="contact">${esc(copy.form.contact)}</label>
-              <input id="contact" name="contact" type="text" autocomplete="email" placeholder="${esc(copy.form.contactPlaceholder)}" />
+            <div class="field-row" id="contact-fields">
+              <div class="field" data-field="phone">
+                <label for="phone">${esc(copy.form.phone)} <span class="req contact-req">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="${esc(copy.form.phonePlaceholder)}" />
+                <p class="hint" data-error="phone"></p>
+              </div>
+              <div class="field" data-field="wechat">
+                <label for="wechat">${esc(copy.form.wechat)} <span class="req contact-req">*</span></label>
+                <input id="wechat" name="wechat" type="text" autocomplete="off" placeholder="${esc(copy.form.wechatPlaceholder)}" />
+                <p class="hint" data-error="wechat"></p>
+              </div>
             </div>
+            <fieldset class="field companions" id="companions-fields">
+              <legend>${esc(copy.form.companions)}</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="adults">${esc(copy.form.adults)}</label>
+                  <input id="adults" name="adults" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="0" />
+                </div>
+                <div class="field">
+                  <label for="children">${esc(copy.form.children)}</label>
+                  <input id="children" name="children" type="number" min="0" max="20" step="1" inputmode="numeric" placeholder="0" />
+                </div>
+              </div>
+              <div class="field" data-field="childAges" id="child-ages-field" hidden>
+                <label for="child-ages">${esc(copy.form.childAges)} <span class="req">*</span></label>
+                <input id="child-ages" name="childAges" type="text" placeholder="${esc(copy.form.childAgesPlaceholder)}" />
+                <p class="hint" data-error="childAges"></p>
+              </div>
+            </fieldset>
             <fieldset class="field">
               <legend>${esc(copy.form.tracks)}</legend>
               <div class="checks">${checks}</div>
@@ -310,16 +348,18 @@ function renderContacts(copy) {
     { key: "telegram", label: copy.footer.telegram },
     { key: "email", label: copy.footer.email },
   ];
-  root.innerHTML = items.map((item) => {
+  const rendered = items.map((item) => {
     const href = contactHref(item.key, contacts);
-    if (!href) {
-      return `<button type="button" class="contact is-empty" disabled>${esc(item.label)}</button>`;
+    if (!href) return "";
+    if (item.key === "wechat" && isQrPath(href)) {
+      return `<button type="button" class="contact" data-wechat-qr="${esc(href)}">${esc(item.label)}</button>`;
     }
     if (item.key === "wechat" && !/^https?:/i.test(href)) {
       return `<button type="button" class="contact" data-wechat="${esc(href)}">${esc(item.label)}</button>`;
     }
     return `<a class="contact" href="${esc(href)}" ${item.key === "email" ? "" : 'target="_blank" rel="noopener noreferrer"'}>${esc(item.label)}</a>`;
-  }).join("");
+  }).filter(Boolean);
+  root.innerHTML = rendered.join("");
 
   const note = document.getElementById("copied");
   root.querySelectorAll("[data-wechat]").forEach((button) => {
@@ -332,6 +372,44 @@ function renderContacts(copy) {
         note.textContent = id;
       }
     });
+  });
+  root.querySelectorAll("[data-wechat-qr]").forEach((button) => {
+    button.addEventListener("click", () => {
+      openWechatQr(button.getAttribute("data-wechat-qr"), copy);
+    });
+  });
+}
+
+function isQrPath(value) {
+  return /\.(webp|png|jpe?g|gif|svg)(\?.*)?$/i.test(String(value || "").trim())
+    || /^images\//i.test(String(value || "").trim());
+}
+
+function openWechatQr(src, copy) {
+  const existing = document.getElementById("wechat-modal");
+  if (existing) existing.remove();
+  const modal = document.createElement("div");
+  modal.id = "wechat-modal";
+  modal.className = "wechat-modal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute("aria-label", copy.footer.wechat);
+  modal.innerHTML = `
+    <button type="button" class="wechat-modal-backdrop" aria-label="${esc(copy.footer.closeQr || "Close")}"></button>
+    <div class="wechat-modal-card">
+      <img src="${esc(src)}" alt="${esc(copy.footer.wechatQrAlt || copy.footer.wechat)}" width="888" height="1191" />
+      <button type="button" class="btn wechat-modal-close">${esc(copy.footer.closeQr || "Close")}</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  const close = () => modal.remove();
+  modal.querySelector(".wechat-modal-backdrop").addEventListener("click", close);
+  modal.querySelector(".wechat-modal-close").addEventListener("click", close);
+  document.addEventListener("keydown", function onKey(event) {
+    if (event.key === "Escape") {
+      close();
+      document.removeEventListener("keydown", onKey);
+    }
   });
 }
 
@@ -347,11 +425,31 @@ function contactHref(key, contacts) {
 function bindForm(copy) {
   const form = document.getElementById("pre-form");
   const otherField = document.getElementById("other-dates-field");
+  const childAgesField = document.getElementById("child-ages-field");
+  const contactFields = document.getElementById("contact-fields");
+  const companionsFields = document.getElementById("companions-fields");
   const errorBox = document.getElementById("form-error");
-  form.addEventListener("change", () => {
+
+  function syncJoinUi() {
     const selected = form.querySelector('input[name="join"]:checked');
-    otherField.hidden = !selected || selected.value !== "other";
+    const isOther = selected && selected.value === "other";
+    const isCant = selected && selected.value === "cant";
+    otherField.hidden = !isOther;
+    if (contactFields) contactFields.hidden = Boolean(isCant);
+    if (companionsFields) companionsFields.hidden = Boolean(isCant);
+    form.querySelectorAll(".contact-req").forEach((node) => {
+      node.hidden = Boolean(isCant);
+    });
+    const children = Number(form.children.value || 0);
+    childAgesField.hidden = isCant || !(children > 0);
+  }
+
+  form.addEventListener("change", syncJoinUi);
+  form.addEventListener("input", (event) => {
+    if (event.target && event.target.name === "children") syncJoinUi();
   });
+  syncJoinUi();
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const errors = validate(form, copy);
@@ -390,6 +488,14 @@ function validate(form, copy) {
   if (selected && selected.value === "other" && form.otherDates.value.trim().length < 2) {
     errors.otherDates = copy.form.errors.otherDates;
   }
+  if (selected && selected.value !== "cant") {
+    if (form.phone.value.trim().length < 5) errors.phone = copy.form.errors.phone;
+    if (form.wechat.value.trim().length < 2) errors.wechat = copy.form.errors.wechat;
+    const children = Number(form.children.value || 0);
+    if (children > 0 && form.childAges.value.trim().length < 1) {
+      errors.childAges = copy.form.errors.childAges;
+    }
+  }
   return errors;
 }
 
@@ -408,6 +514,12 @@ function payload(form, copy) {
   const option = copy.form.joinOptions.find((item) => item.id === selected.value);
   const trackIds = data.getAll("tracks");
   const labels = copy.tracks.items.filter((item) => trackIds.includes(item.id)).map((item) => item.title);
+  const cant = selected.value === "cant";
+  const phone = cant ? "" : String(data.get("phone") || "").trim();
+  const wechat = cant ? "" : String(data.get("wechat") || "").trim();
+  const adults = cant ? "" : String(data.get("adults") || "").trim();
+  const children = cant ? "" : String(data.get("children") || "").trim();
+  const childAges = cant || !(Number(children) > 0) ? "" : String(data.get("childAges") || "").trim();
   return {
     lang: PAGE_LANG,
     fullName: data.get("fullName").trim(),
@@ -416,7 +528,12 @@ function payload(form, copy) {
     otherDates: selected.value === "other" ? data.get("otherDates").trim() : "",
     companies: String(data.get("companies") || "").trim(),
     businessInterest: String(data.get("businessInterest") || "").trim(),
-    contact: String(data.get("contact") || "").trim(),
+    phone,
+    wechat,
+    contact: [phone, wechat].filter(Boolean).join(" / "),
+    adults,
+    children,
+    childAges,
     tracks: trackIds.join(", "),
     tracksLabels: labels.join(" | "),
   };

@@ -35,24 +35,42 @@ English:
 
 ## Run it locally
 
-Open the folder in a terminal. A local server is required, because the page loads its text from JSON. Opening the HTML file directly will not work.
+Open the folder in a terminal. A local server is required, because the page loads its text from JSON and the form posts to `/api/pre-register`.
 
 ```bash
 cd ~/Desktop/GitHub/CEIBS_Russia
-python3 -m http.server 4317
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python3 server.py
 ```
 
-Then open [http://127.0.0.1:4317](http://127.0.0.1:4317).
+Then open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-- English: [http://127.0.0.1:4317/](http://127.0.0.1:4317/)
-- 中文: [http://127.0.0.1:4317/zh.html](http://127.0.0.1:4317/zh.html)
-- Русский: [http://127.0.0.1:4317/ru.html](http://127.0.0.1:4317/ru.html)
+- English: [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
+- 中文: [http://127.0.0.1:8080/zh.html](http://127.0.0.1:8080/zh.html)
+- Русский: [http://127.0.0.1:8080/ru.html](http://127.0.0.1:8080/ru.html)
+
+Without `DATABASE_URL`, submissions are stored in `data/pre_registrations.sqlite` (gitignored). With `DATABASE_URL` set to a Postgres URL, the same table is written there.
+
+You can still use a plain static server for layout checks only (`python3 -m http.server 4317`), but the form API will not work that way.
 
 The first visit to the English page follows the browser language and remembers the choice in `localStorage` (`ceibs-russia-lang`). A shared link to `zh.html` or `ru.html` stays in that language.
 
+## Deploy to Railway
+
+1. Create a Railway project from this GitHub repo.
+2. Add a **PostgreSQL** plugin/service. Railway injects `DATABASE_URL` into the web service — reference that variable on the app service (no need to paste the URL by hand if you link the services).
+3. **Build command:** `pip install -r requirements.txt`
+4. **Start command:** `python3 server.py`
+5. Listen port: `server.py` binds `0.0.0.0:$PORT` (Railway sets `PORT`; default locally is `8080`).
+6. On startup the app creates table `pre_registrations` if it does not exist.
+
+Primary form path: browser `POST /api/pre-register` with the JSON body from `js/main.js` → insert → `{ "ok": true }`. After a successful (or failed) API call the page still shows the thanks screen, opens the WeChat QR when configured, and copies a text summary to the clipboard. If the API fails after one retry, the thanks note explains the clipboard fallback and does not claim the row was saved to the database.
+
 ## Deploy to Vercel
 
-The site is static. No build step.
+The static files can still be hosted on Vercel, but **Vercel will not run `server.py` or write to Postgres**. Prefer Railway for the live form. If you only need a static preview on Vercel:
 
 1. In `index.html`, `zh.html`, and `ru.html`, replace every `https://YOUR_DOMAIN` with the real address, including `https://`. WeChat and WhatsApp need an absolute image URL for the preview. The share image is `images/og.jpg` (under 80 KB).
 2. Push the folder to a Git repository, or deploy the folder with the Vercel CLI: `npx vercel`.
@@ -70,11 +88,38 @@ The keys match. Change a sentence in all three files, or the missing language wi
 
 To change which photo a day uses, edit that day’s `"image"` value in all three JSON files.
 
-## Connect the form to a Google Sheet
+## Form storage (Postgres / SQLite)
 
-The endpoint is the `googleScriptUrl` string in `js/config.js`. Leave it empty until the sheet is ready. While both `googleScriptUrl` and `formspreeUrl` are empty, a valid submission is still accepted: the page shows “Your pre-registration is accepted.”, opens the WeChat QR (if configured), and copies a text summary to the clipboard so the guest can paste it to Vlad. Once you paste a Sheet `/exec` URL into `googleScriptUrl`, submissions go to Apps Script as usual.
+Validated submissions `POST` JSON to `/api/pre-register`. The server inserts a row and returns `{ "ok": true }`.
 
-Each submission includes `lang` (`en`, `zh`, or `ru`), so you can see which language they used. After a successful send (or local accept), the page shows “Your pre-registration is accepted.”
+JSON body keys match `payload()` in `js/main.js`: `lang`, `fullName`, `join`, `joinLabel`, `otherDates`, `companies`, `businessInterest`, `phone`, `wechat`, `contact`, `adults`, `children`, `childAges`, `tracks`, `tracksLabels`.
+
+Table `pre_registrations` columns:
+
+| Column | Source |
+| --- | --- |
+| `full_name` | `fullName` |
+| `phone` | `phone` |
+| `wechat` | `wechat` |
+| `cant` | `true` when `join === "cant"` |
+| `join_choice` | `join` (`in` / `likely` / `other` / `cant`) |
+| `join_label` | `joinLabel` |
+| `other_dates` | `otherDates` |
+| `companies` | `companies` (places of interest) |
+| `business_interest` | `businessInterest` |
+| `adults` / `children` / `child_ages` | companions |
+| `tracks` / `tracks_labels` | track ids and labels |
+| `contact` | combined phone / WeChat |
+| `language` | `lang` |
+| `user_agent` | request `User-Agent` |
+| `created_at` | server timestamp |
+| `raw_json` | full request JSON |
+
+## Optional Google Sheet mirror
+
+The primary path no longer depends on `googleScriptUrl`. You may still paste a Sheet `/exec` URL into `googleScriptUrl` in `js/config.js` as a secondary mirror. While it is empty, submissions only go to `/api/pre-register` (plus the thanks / WeChat / clipboard UX).
+
+Each submission includes `lang` (`en`, `zh`, or `ru`). After send, the page shows “Your pre-registration is accepted.”
 
 1. Create a Google Sheet.
 2. Extensions → Apps Script. Delete the sample and paste this:

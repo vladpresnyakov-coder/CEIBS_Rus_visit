@@ -1,2 +1,7 @@
 .DS_Store
 .vercel
+data/
+__pycache__/
+*.pyc
+.venv/
+venv/

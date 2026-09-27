@@ -1,13 +1,13 @@
 /* One place for endpoints and contact links.
-   How to connect the Google Sheet: see README.md. */
+   Primary store: POST /api/pre-register (server.py → Postgres or local SQLite).
+   Optional mirrors: googleScriptUrl / formspreeUrl — see README.md. */
 const CEIBS_CONFIG = {
-  /* Google Apps Script web app URL (/exec). Preferred.
+  /* Optional Google Apps Script web app URL (/exec).
      Script appends rows to the sheet and emails an Excel/CSV copy to
      vlad.presnyakov@gmail.com — paste the /exec URL here once deployed.
-     While empty (and formspreeUrl empty), valid submissions are accepted
-     locally: thanks screen + WeChat QR + clipboard summary. */
+     Submissions always go to /api/pre-register first; this is a secondary mirror. */
   googleScriptUrl: "",
-  /* Formspree endpoint, used only if googleScriptUrl is empty.
+  /* Optional Formspree endpoint, used only if googleScriptUrl is empty.
      Example: "https://formspree.io/f/xxxxxxxx" */
   formspreeUrl: "",
   contacts: {

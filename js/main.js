@@ -471,10 +471,10 @@ function bindForm(copy) {
     try {
       const body = payload(form, copy);
       const result = await send(body);
-      showThanks(result && result.via === "local" ? copy.form.thanksLocalNote : "");
-      if (result && result.via === "local") {
-        await finishLocalSubmission(body, copy);
-      }
+      /* Always keep thanks + WeChat QR + clipboard. If the DB API failed,
+         show the clipboard note so the guest can still reach Vlad. */
+      showThanks(result && result.saved ? "" : copy.form.thanksLocalNote);
+      await finishLocalSubmission(body, copy);
     } catch (err) {
       errorBox.hidden = false;
       errorBox.textContent = copy.form.errors.network;
@@ -544,30 +544,58 @@ function payload(form, copy) {
   };
 }
 
+async function postPreRegister(body) {
+  const response = await fetch("/api/pre-register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) throw new Error("network");
+  const data = await response.json();
+  if (!data || data.ok !== true) throw new Error("api");
+  return data;
+}
+
 async function send(body) {
+  let saved = false;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      await postPreRegister(body);
+      saved = true;
+      break;
+    } catch (_) {
+      /* One retry, then fall through to clipboard / WeChat path. */
+    }
+  }
+
+  /* Optional secondary mirrors (Google Sheet / Formspree). Primary path is /api/pre-register. */
   const config = typeof CEIBS_CONFIG !== "undefined" ? CEIBS_CONFIG : {};
   const google = String(config.googleScriptUrl || "").trim();
   const formspree = String(config.formspreeUrl || "").trim();
   if (google) {
-    await fetch(google, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(body),
-    });
-    return { via: "google" };
+    try {
+      await fetch(google, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(body),
+      });
+    } catch (_) {
+      /* Secondary only. */
+    }
+  } else if (formspree) {
+    try {
+      await fetch(formspree, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(body),
+      });
+    } catch (_) {
+      /* Secondary only. */
+    }
   }
-  if (formspree) {
-    const response = await fetch(formspree, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(body),
-    });
-    if (!response.ok) throw new Error("network");
-    return { via: "formspree" };
-  }
-  /* Interim: accept locally until googleScriptUrl is set in js/config.js. */
-  return { via: "local" };
+
+  return { via: saved ? "api" : "local", saved };
 }
 
 function formatSubmissionSummary(body) {

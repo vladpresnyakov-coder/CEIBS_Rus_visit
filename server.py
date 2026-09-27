@@ -16,6 +16,8 @@ from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
 
+from mail_export import send_pre_registration_export
+
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 SQLITE_PATH = DATA_DIR / "pre_registrations.sqlite"
@@ -236,6 +238,46 @@ def insert_registration(payload: dict, user_agent: str) -> None:
         conn.execute(sql, values)
 
 
+def fetch_all_registrations() -> list[dict]:
+    """Return every row from pre_registrations as dicts (column → value)."""
+    cols = (
+        "id",
+        "full_name",
+        "phone",
+        "wechat",
+        "cant",
+        "join_choice",
+        "join_label",
+        "other_dates",
+        "companies",
+        "business_interest",
+        "adults",
+        "children",
+        "child_ages",
+        "tracks",
+        "tracks_labels",
+        "contact",
+        "language",
+        "user_agent",
+        "created_at",
+        "raw_json",
+    )
+    select_sql = (
+        f"SELECT {', '.join(cols)} FROM pre_registrations ORDER BY id ASC"
+    )
+
+    if _is_postgres():
+        with _pg_conn() as conn:
+            with conn.cursor() as cur:
+                cur.execute(select_sql)
+                return [dict(zip(cols, row)) for row in cur.fetchall()]
+
+    with _sqlite_conn() as conn:
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute(select_sql).fetchall()
+        return [dict(row) for row in rows]
+
+
 @app.post("/api/pre-register")
 def pre_register():
     data = request.get_json(silent=True)
@@ -260,6 +302,12 @@ def pre_register():
     except Exception as exc:
         app.logger.exception("pre-register insert failed: %s", exc)
         return jsonify({"ok": False, "error": "db"}), 500
+
+    # Email full-table xlsx; missing SMTP or send errors must not break UX.
+    send_pre_registration_export(
+        full_name=full_name,
+        fetch_fn=fetch_all_registrations,
+    )
 
     return jsonify({"ok": True})
 

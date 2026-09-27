@@ -65,8 +65,24 @@ The first visit to the English page follows the browser language and remembers t
 4. **Start command:** `python3 server.py`
 5. Listen port: `server.py` binds `0.0.0.0:$PORT` (Railway sets `PORT`; default locally is `8080`).
 6. On startup the app creates table `pre_registrations` if it does not exist.
+7. After each successful insert the server emails a full `.xlsx` export of `pre_registrations` (see SMTP variables below). Missing SMTP config only logs a warning — the form still returns `{ "ok": true }`.
 
 Primary form path: browser `POST /api/pre-register` with the JSON body from `js/main.js` → insert → `{ "ok": true }`. After a successful (or failed) API call the page still shows the thanks screen, opens the WeChat QR when configured, and copies a text summary to the clipboard. If the API fails after one retry, the thanks note explains the clipboard fallback and does not claim the row was saved to the database.
+
+### Railway / env variables
+
+| Variable | Required | Default / example | Purpose |
+| --- | --- | --- | --- |
+| `DATABASE_URL` | Yes (prod) | from Railway Postgres | Persist pre-registrations |
+| `PORT` | No | set by Railway / `8080` locally | Listen port |
+| `MAIL_TO` | No | `vlad.presnyakov@gmail.com` | Inbox for the xlsx export |
+| `MAIL_FROM` | No | `SMTP_USER`, else `MAIL_TO` | From address |
+| `SMTP_HOST` | For email | `smtp.gmail.com` | SMTP server |
+| `SMTP_PORT` | For email | `587` | SMTP port (STARTTLS) |
+| `SMTP_USER` | For email | your Gmail address | SMTP login |
+| `SMTP_PASSWORD` | For email | Gmail **App Password** | SMTP password (not the normal Gmail password) |
+
+**Gmail App Password setup:** Google Account → Security → 2-Step Verification (on) → App passwords → create one for “Mail” → paste the 16-character value into Railway as `SMTP_PASSWORD`. Set `SMTP_USER` to the same Gmail address, `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`. Optionally override `MAIL_TO` / `MAIL_FROM`.
 
 ## Deploy to Vercel
 
@@ -90,7 +106,7 @@ To change which photo a day uses, edit that day’s `"image"` value in all three
 
 ## Form storage (Postgres / SQLite)
 
-Validated submissions `POST` JSON to `/api/pre-register`. The server inserts a row and returns `{ "ok": true }`.
+Validated submissions `POST` JSON to `/api/pre-register`. The server inserts a row and returns `{ "ok": true }`. On success it also builds an Excel export of the **entire** `pre_registrations` table and emails it when SMTP env vars are set (see Railway section above).
 
 JSON body keys match `payload()` in `js/main.js`: `lang`, `fullName`, `join`, `joinLabel`, `otherDates`, `companies`, `businessInterest`, `phone`, `wechat`, `contact`, `adults`, `children`, `childAges`, `tracks`, `tracksLabels`.
 

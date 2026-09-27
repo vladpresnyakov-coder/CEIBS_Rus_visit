@@ -72,9 +72,9 @@ To change which photo a day uses, edit that day’s `"image"` value in all three
 
 ## Connect the form to a Google Sheet
 
-The endpoint is the `googleScriptUrl` string in `js/config.js`. Leave it empty until the sheet is ready. If it is empty and `formspreeUrl` is also empty, the form tells the guest to message Vlad instead of pretending the note was sent.
+The endpoint is the `googleScriptUrl` string in `js/config.js`. Leave it empty until the sheet is ready. While both `googleScriptUrl` and `formspreeUrl` are empty, a valid submission is still accepted: the page shows “Your pre-registration is accepted.”, opens the WeChat QR (if configured), and copies a text summary to the clipboard so the guest can paste it to Vlad. Once you paste a Sheet `/exec` URL into `googleScriptUrl`, submissions go to Apps Script as usual.
 
-Each submission includes `lang` (`en`, `zh`, or `ru`), so you can see which language they used. After a successful send, the page shows “Your pre-registration is accepted.”
+Each submission includes `lang` (`en`, `zh`, or `ru`), so you can see which language they used. After a successful send (or local accept), the page shows “Your pre-registration is accepted.”
 
 1. Create a Google Sheet.
 2. Extensions → Apps Script. Delete the sample and paste this:

@@ -313,6 +313,7 @@ function render(copy) {
           <div class="thanks" id="thanks" hidden tabindex="-1">
             <h3>${esc(copy.form.thanksTitle)}</h3>
             <p>${esc(copy.form.thanksBody)}</p>
+            <p data-thanks-note hidden></p>
           </div>
         </div>
       </div>
@@ -468,11 +469,15 @@ function bindForm(copy) {
     button.textContent = copy.form.sending;
     errorBox.hidden = true;
     try {
-      await send(payload(form, copy));
-      showThanks();
+      const body = payload(form, copy);
+      const result = await send(body);
+      showThanks(result && result.via === "local" ? copy.form.thanksLocalNote : "");
+      if (result && result.via === "local") {
+        await finishLocalSubmission(body, copy);
+      }
     } catch (err) {
       errorBox.hidden = false;
-      errorBox.textContent = err.code === "config" ? copy.form.errors.config : copy.form.errors.network;
+      errorBox.textContent = copy.form.errors.network;
       button.disabled = false;
       button.textContent = copy.form.submit;
     }
@@ -550,7 +555,7 @@ async function send(body) {
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(body),
     });
-    return;
+    return { via: "google" };
   }
   if (formspree) {
     const response = await fetch(formspree, {
@@ -559,18 +564,59 @@ async function send(body) {
       body: JSON.stringify(body),
     });
     if (!response.ok) throw new Error("network");
-    return;
+    return { via: "formspree" };
   }
-  const error = new Error("config");
-  error.code = "config";
-  throw error;
+  /* Interim: accept locally until googleScriptUrl is set in js/config.js. */
+  return { via: "local" };
 }
 
-function showThanks() {
+function formatSubmissionSummary(body) {
+  const lines = [
+    "CEIBS Russia pre-registration",
+    `Language: ${body.lang || ""}`,
+    `Name: ${body.fullName || ""}`,
+    `Join: ${body.joinLabel || body.join || ""}`,
+  ];
+  if (body.otherDates) lines.push(`Other dates: ${body.otherDates}`);
+  if (body.companies) lines.push(`Companies: ${body.companies}`);
+  if (body.businessInterest) lines.push(`Business interest: ${body.businessInterest}`);
+  if (body.phone) lines.push(`Phone: ${body.phone}`);
+  if (body.wechat) lines.push(`WeChat: ${body.wechat}`);
+  if (body.adults !== "") lines.push(`Adults: ${body.adults}`);
+  if (body.children !== "") lines.push(`Children: ${body.children}`);
+  if (body.childAges) lines.push(`Child ages: ${body.childAges}`);
+  if (body.tracksLabels) lines.push(`Tracks: ${body.tracksLabels}`);
+  return lines.join("\n");
+}
+
+async function finishLocalSubmission(body, copy) {
+  const summary = formatSubmissionSummary(body);
+  console.log("[CEIBS pre-registration]", body);
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(summary);
+    }
+  } catch (_) {
+    /* Clipboard may be blocked; thanks + WeChat QR still work. */
+  }
+  const contacts = (typeof CEIBS_CONFIG !== "undefined" && CEIBS_CONFIG.contacts) || {};
+  const wechat = String(contacts.wechat || "").trim();
+  if (wechat && isQrPath(wechat)) {
+    openWechatQr(wechat, copy);
+  }
+}
+
+function showThanks(extraNote) {
   const form = document.getElementById("pre-form");
   const thanks = document.getElementById("thanks");
   form.hidden = true;
   thanks.hidden = false;
+  const note = thanks.querySelector("[data-thanks-note]");
+  if (note) {
+    const text = String(extraNote || "").trim();
+    note.textContent = text;
+    note.hidden = !text;
+  }
   thanks.focus();
 }
 

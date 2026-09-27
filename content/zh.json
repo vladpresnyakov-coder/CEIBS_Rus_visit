@@ -354,11 +354,11 @@
       "phone": "请填写电话。",
       "wechat": "请填写微信号。",
       "childAges": "请填写儿童年龄。",
-      "network": "没有发送成功。请再试一次，或直接联系 Vlad。",
-      "config": "表单还没接通。请直接联系 Vlad。"
+      "network": "没有发送成功。请再试一次，或直接联系 Vlad。"
     },
     "thanksTitle": "您的预报名已受理。",
     "thanksBody": "Vlad 会亲自回复你。",
+    "thanksLocalNote": "摘要已复制到剪贴板——如需可粘贴发给 Vlad 的微信。",
     "honeypot": "网站"
   },
   "footer": {

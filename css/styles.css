@@ -308,9 +308,13 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
 .track-grid {
   display: grid;
   gap: .75rem;
+  align-items: stretch;
 }
 
 .track {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: var(--panel);
   border: 1px solid var(--line);
   padding: 1.25rem 1.2rem 1.35rem;
@@ -319,6 +323,7 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
 .track svg {
   width: 2rem;
   height: 2rem;
+  flex-shrink: 0;
   stroke: var(--gold);
   fill: none;
   stroke-width: 1.4;
@@ -327,20 +332,24 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
 }
 
 .track h3 { margin: .9rem 0 .35rem; font-size: 1.45rem; }
-.track p { margin: 0; color: rgba(244, 247, 248, .86); }
+.track p { margin: 0; color: rgba(244, 247, 248, .86); flex: 1 1 auto; }
 
 .track-photo {
-  margin-top: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
   overflow: hidden;
-  border: 1px solid var(--line);
+  align-self: stretch;
 }
 
 .track-photo img {
   width: 100%;
   height: 9.5rem;
+  aspect-ratio: 4 / 3;
   max-height: min(22vh, 180px);
   object-fit: cover;
+  object-position: center bottom;
   display: block;
+  border: 1px solid var(--line);
 }
 
 .tracks-caption {

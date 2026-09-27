@@ -354,11 +354,11 @@
       "phone": "Please add a phone number.",
       "wechat": "Please add your WeChat ID.",
       "childAges": "Please add the children’s ages.",
-      "network": "Something went wrong. Please try again, or message Vlad directly.",
-      "config": "The form is not connected yet. Please message Vlad directly."
+      "network": "Something went wrong. Please try again, or message Vlad directly."
     },
     "thanksTitle": "Your pre-registration is accepted.",
     "thanksBody": "Vlad will get back to you personally.",
+    "thanksLocalNote": "A summary was copied to your clipboard — paste it to Vlad on WeChat if you like.",
     "honeypot": "Website"
   },
   "footer": {

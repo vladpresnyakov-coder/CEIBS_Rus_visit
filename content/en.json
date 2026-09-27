@@ -64,9 +64,18 @@
     "imageAlt": "A winter folk festival in the snow, with wooden towers and a crowd in traditional dress",
     "tempsNote": "Approximate January averages",
     "temps": [
-      { "place": "Moscow", "value": "−6°" },
-      { "place": "St. Petersburg", "value": "−5°" },
-      { "place": "Teriberka", "value": "−10 to −20°" }
+      {
+        "place": "Moscow",
+        "value": "−6°"
+      },
+      {
+        "place": "St. Petersburg",
+        "value": "−5°"
+      },
+      {
+        "place": "Teriberka",
+        "value": "−10 to −20°"
+      }
     ],
     "points": [
       {
@@ -128,8 +137,8 @@
         "dayNum": "26",
         "month": "Jan",
         "city": "Moscow",
-        "image": "basil",
-        "imageAlt": "Saint Basil’s Cathedral on Red Square at night, in the snow",
+        "image": "crowns",
+        "imageAlt": "Imperial crowns and regalia in the Kremlin Armoury Chamber",
         "morning": "Kremlin, Armoury Chamber, Red Square",
         "afternoon": "Individual business meetings",
         "evening": "Dinner or a cultural evening",
@@ -202,9 +211,9 @@
       }
     ],
     "extension": "February 1–3 — optional business extension in Moscow.",
-    "backup": "Arctic weather backup: if the road to Teriberka closes, we switch to the nuclear icebreaker Lenin and a reindeer and husky farm.",
-    "backupImage": "lenin",
-    "backupAlt": "The nuclear icebreaker Lenin, now a museum ship in Murmansk",
+    "backup": "",
+    "backupImage": "",
+    "backupAlt": "",
     "galleryTitle": "Moments you’ll live",
     "galleryHint": "Swipe through",
     "photoToAdd": "Photo to add",
@@ -276,22 +285,10 @@
         "placeholder": false
       },
       {
-        "image": "creative",
-        "caption": "Smeshariki and 13 Cards",
-        "alt": "Placeholder for the Smeshariki and 13 Cards studio",
-        "placeholder": true
-      },
-      {
         "image": "club",
         "caption": "A Moscow night",
         "alt": "A nightclub, with a DJ and the crowd under the lights",
         "placeholder": false
-      },
-      {
-        "image": "dining",
-        "caption": "A long dinner",
-        "alt": "Placeholder for a Moscow or St. Petersburg restaurant interior",
-        "placeholder": true
       },
       {
         "image": "plate",
@@ -304,20 +301,32 @@
   "form": {
     "eyebrow": "04 — A note is enough",
     "title": "Tell Vlad you’re coming",
-    "intro": "Five to ten people. He will write back himself.",
+    "intro": "Leave a short note below.",
     "name": "Full name",
     "namePlaceholder": "First and last name",
     "join": "Will you join?",
     "joinOptions": [
-      { "id": "in", "label": "I’m in" },
-      { "id": "likely", "label": "Most likely" },
-      { "id": "other", "label": "I’d join on other dates" },
-      { "id": "cant", "label": "I can’t make it" }
+      {
+        "id": "in",
+        "label": "I’m in"
+      },
+      {
+        "id": "likely",
+        "label": "Most likely"
+      },
+      {
+        "id": "other",
+        "label": "I’d join on other dates"
+      },
+      {
+        "id": "cant",
+        "label": "I can’t make it"
+      }
     ],
     "otherDates": "Which dates would work for you?",
     "otherDatesPlaceholder": "A week in March, for example",
-    "companies": "Which companies would you like to visit in Russia?",
-    "companiesPlaceholder": "A sector, a company, or a person you want to meet",
+    "companies": "Which places in Russia would you like to visit?",
+    "companiesPlaceholder": "A city, a landmark, or somewhere you want to see",
     "interest": "What business interest do you have in Russia?",
     "interestPlaceholder": "A market, a partnership, an investment, or something else",
     "contact": "Email, WeChat, or WhatsApp",

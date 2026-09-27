@@ -7,8 +7,8 @@ A one-page promo site for a private trip organized by russian cohort GEMBA 2025.
 1. **Hero** — Red Square in snow, the two-line headline, dates, a countdown to 24 January 2027 (midnight, Moscow time), and a button to the form.
 2. **Four tracks** — Business, Education, Culture, Unique. Guests can mix them. The SKOLKOVO disk sits under the cards.
 3. **Why Russia, why winter** — four short points, January temperatures, the Gulf Stream, a clothing checklist, northern lights, and the visa line.
-4. **Program** — day by day from 24 to 31 January, the 1–3 February extension, the Teriberka weather backup (icebreaker Lenin), and a horizontal strip of moments.
-5. **Pre-registration** — name, whether they will come, companies, business interest, optional contact and tracks.
+4. **Program** — day by day from 24 to 31 January, the 1–3 February extension, and a horizontal strip of moments.
+5. **Pre-registration** — name, whether they will come, places to visit, business interest, optional contact and tracks.
 6. **Footer** — organizer line and WeChat, WhatsApp, Telegram, email.
 
 ## Headline options
@@ -150,6 +150,6 @@ Empty buttons stay visible and do nothing, so the layout is ready before the lin
 4. After a new hero, rebuild `images/og.jpg` at 1200×630 and replace `https://YOUR_DOMAIN` if the preview should update.
 5. Add the author, license, and source URL to `CREDITS.md`.
 
-Placeholders (diver, Moscow club, Smeshariki / 13 Cards, restaurant interior, plated Russian cuisine) are SVG files with a comment at the top describing the exact photo to drop in. Food close-ups and the Arctic boat on the page are real, freely licensed photos, but they were not taken on this trip. Notes are in `CREDITS.md`.
+Placeholders (diver, restaurant interior) are SVG files with a comment at the top describing the exact photo to drop in. Food close-ups and the Arctic boat on the page are real, freely licensed photos, but they were not taken on this trip. Notes are in `CREDITS.md`.
 
 There are no trackers and no cookie banner.

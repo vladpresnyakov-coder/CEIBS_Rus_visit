@@ -341,8 +341,14 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
   display: block;
 }
 
+.campus.is-collage {
+  width: min(920px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
 .campus.is-collage img {
-  max-height: none;
+  max-height: min(36vh, 340px);
+  width: 100%;
   aspect-ratio: 2400 / 834;
   object-fit: cover;
   object-position: center;
@@ -360,8 +366,10 @@ html[lang="zh-Hans"] .section h2 { max-width: 12em; }
 .why-photo { margin: 0; position: relative; }
 .why-photo img {
   width: 100%;
-  aspect-ratio: 4/5;
+  max-height: min(48vh, 420px);
+  aspect-ratio: 4/3;
   object-fit: cover;
+  object-position: center 35%;
   display: block;
 }
 
@@ -649,7 +657,7 @@ section, .register { scroll-margin-top: 4.75rem; }
   .header-cta { display: inline-flex; }
   .track-grid { grid-template-columns: 1fr 1fr; }
   .slots { grid-template-columns: repeat(3, 1fr); }
-  .why-photo img { aspect-ratio: 16/11; }
+  .why-photo img { aspect-ratio: 16/11; max-height: min(44vh, 400px); }
   .backup { grid-template-columns: 220px 1fr; }
   .shot { flex-basis: 240px; }
 }
@@ -658,7 +666,7 @@ section, .register { scroll-margin-top: 4.75rem; }
   .nav-links { display: flex; }
   .track-grid { grid-template-columns: repeat(4, 1fr); }
   .why-grid { grid-template-columns: 1.05fr .95fr; align-items: center; gap: 2.5rem; }
-  .why-photo img { aspect-ratio: 4/5; max-height: 720px; }
+  .why-photo img { aspect-ratio: 4/5; max-height: min(52vh, 460px); }
   .day {
     display: grid;
     grid-template-columns: minmax(240px, 42%) 1fr;

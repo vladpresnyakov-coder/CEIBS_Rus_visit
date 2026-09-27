@@ -34,6 +34,7 @@ const MEDIA = {
   vdnkhIce: { src: "images/vdnkh-ice.webp", w: 927, h: 812 },
   whale: { src: "images/whale-fluke.webp", w: 1200, h: 1178 },
   festival: { src: "images/winter-festival.webp", w: 1600, h: 1227 },
+  crowns: { src: "images/crowns-regalia.webp", w: 1600, h: 1243 },
   lenin: { src: "images/icebreaker-lenin.webp", w: 1400, h: 933 },
   uni: { src: "images/sea-urchin.webp", w: 1400, h: 1050 },
   crab: { src: "images/king-crab.webp", w: 1400, h: 1050 },
@@ -49,7 +50,7 @@ const MEDIA = {
 const DAY_FRAME = {
   jan24: "center 42%",
   jan25: "center",
-  jan26: "center 18%",
+  jan26: "center 40%",
   jan27: "center",
   jan28: "center 28%",
   jan29: "center",
@@ -213,10 +214,11 @@ function render(copy) {
         <h2>${esc(copy.program.title)}</h2>
         <ol class="days">${days}</ol>
         <p class="extension">${esc(copy.program.extension)}</p>
+        ${!isBlank(copy.program.backup) ? `
         <aside class="backup">
-          ${imgHTML(copy.program.backupImage, copy.program.backupAlt, { sizes: "(min-width: 720px) 220px, 100vw" })}
+          ${copy.program.backupImage ? imgHTML(copy.program.backupImage, copy.program.backupAlt, { sizes: "(min-width: 720px) 220px, 100vw" }) : ""}
           <p>${esc(copy.program.backup)}</p>
-        </aside>
+        </aside>` : ""}
       </div>
       <div class="wrap gallery-head">
         <h3>${esc(copy.program.galleryTitle)}</h3>

@@ -13,6 +13,7 @@ Replace a photo by putting a new file in `images/` and pointing the matching id 
 | `images/vdnkh-ice.webp` | Ice rink at VDNKh, Moscow. Third panel of the tracks collage | Provided by organizer | — | Organizer photo |
 | `images/whale-fluke.webp` | Whale fluke in Arctic waters. Fourth panel of the tracks collage | Provided by organizer | — | Organizer photo |
 | `images/winter-festival.webp` | Winter folk festival. Photo for “02 — Why this week” / Three Russias | Provided by organizer | — | Organizer photo |
+| `images/crowns-regalia.webp` | Imperial crowns and regalia (Monomakh’s Cap and related pieces). Tuesday 26 January / Kremlin Armoury | Provided by organizer | — | Organizer photo |
 | `images/campus-collage.webp` | Four-panel collage: T-Bank, SKOLKOVO fragment, VDNKh ice, whale fluke | Provided by organizer (composite; SKOLKOVO panel from Commons derivative below) | — | Organizer photos + `skolkovo-disk.webp` |
 | `images/basil-snow-night.webp` | Saint Basil’s Cathedral at night, snow on Red Square | Christian Senger | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Snowy_St._Basil%27s_(3524266063).jpg) |
 | `images/teriberka-coast.webp` | Teriberka coast, Kola Peninsula. Still in the media library; no longer the Why-section lead | Ninara | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [File page](https://commons.wikimedia.org/wiki/File:Teriberka,_Kola_Peninsula,_Russia_(21697856432).jpg) |
@@ -43,5 +44,4 @@ These are drawn frames, not photographs. Each SVG file has a comment describing 
 | File | Put this photo here |
 | --- | --- |
 | `images/placeholder-arctic-diver.svg` | A diver in the Barents Sea beside a small boat, with sea urchins or scallops just brought up. Your own photo. Not an AI image of the place. |
-| `images/placeholder-creative-studio.svg` | Smeshariki and/or «13 карт» (13 Cards). Official art from ГК «Рики» is not cleared for this site. Use a photo from the visit, or artwork you have permission to publish. |
 | `images/placeholder-restaurant.svg` | A Moscow or St. Petersburg restaurant interior, warmly lit. A photo of the welcome dinner or the farewell brunch is the right one. |

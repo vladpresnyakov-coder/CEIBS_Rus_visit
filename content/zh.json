@@ -64,9 +64,18 @@
     "imageAlt": "雪地里的冬季节庆：木塔与身着传统服装的人群",
     "tempsNote": "一月平均气温，大约",
     "temps": [
-      { "place": "莫斯科", "value": "−6°" },
-      { "place": "圣彼得堡", "value": "−5°" },
-      { "place": "捷里别尔卡", "value": "−10 到 −20°" }
+      {
+        "place": "莫斯科",
+        "value": "−6°"
+      },
+      {
+        "place": "圣彼得堡",
+        "value": "−5°"
+      },
+      {
+        "place": "捷里别尔卡",
+        "value": "−10 到 −20°"
+      }
     ],
     "points": [
       {
@@ -128,8 +137,8 @@
         "dayNum": "26",
         "month": "1月",
         "city": "莫斯科",
-        "image": "basil",
-        "imageAlt": "雪夜中的红场与圣瓦西里大教堂",
+        "image": "crowns",
+        "imageAlt": "克里姆林宫军械库中的皇冠与王室仪仗",
         "morning": "克里姆林宫、军械库、红场",
         "afternoon": "单独的商务会面",
         "evening": "晚餐或一场文化晚会",
@@ -202,9 +211,9 @@
       }
     ],
     "extension": "2月1日至3日 — 可选的莫斯科商务延长。",
-    "backup": "北极天气备案：如果去捷里别尔卡的路封了，就改去核动力破冰船「列宁号」，以及驯鹿和哈士奇农场。",
-    "backupImage": "lenin",
-    "backupAlt": "核动力破冰船「列宁号」，现停泊在摩尔曼斯克，作为博物馆",
+    "backup": "",
+    "backupImage": "",
+    "backupAlt": "",
     "galleryTitle": "你会真正经历的瞬间",
     "galleryHint": "左右滑动",
     "photoToAdd": "待补照片",
@@ -276,22 +285,10 @@
         "placeholder": false
       },
       {
-        "image": "creative",
-        "caption": "Smeshariki 与《13张牌》",
-        "alt": "Smeshariki 与《13张牌》工作室的照片占位",
-        "placeholder": true
-      },
-      {
         "image": "club",
         "caption": "莫斯科的夜晚",
         "alt": "夜店里，灯光下的DJ和人群",
         "placeholder": false
-      },
-      {
-        "image": "dining",
-        "caption": "一顿长晚餐",
-        "alt": "莫斯科或圣彼得堡餐厅内景的照片占位",
-        "placeholder": true
       },
       {
         "image": "plate",
@@ -304,20 +301,32 @@
   "form": {
     "eyebrow": "04 — 留一句话就够",
     "title": "跟 Vlad 说一声你要来",
-    "intro": "一共五到十个人。他会亲自回复。",
+    "intro": "在下方留一句简短说明即可。",
     "name": "姓名",
     "namePlaceholder": "姓和名",
     "join": "你会来吗？",
     "joinOptions": [
-      { "id": "in", "label": "我确定去" },
-      { "id": "likely", "label": "很可能会去" },
-      { "id": "other", "label": "其他日期可以" },
-      { "id": "cant", "label": "这次去不了" }
+      {
+        "id": "in",
+        "label": "我确定去"
+      },
+      {
+        "id": "likely",
+        "label": "很可能会去"
+      },
+      {
+        "id": "other",
+        "label": "其他日期可以"
+      },
+      {
+        "id": "cant",
+        "label": "这次去不了"
+      }
     ],
     "otherDates": "你哪段时间方便？",
     "otherDatesPlaceholder": "例如三月的某一周",
-    "companies": "你想在俄罗斯参观哪些公司？",
-    "companiesPlaceholder": "行业、公司，或你想见的人",
+    "companies": "你想在俄罗斯参观哪些地方？",
+    "companiesPlaceholder": "城市、景点，或你想去的地方",
     "interest": "你在俄罗斯有什么商业兴趣？",
     "interestPlaceholder": "市场、合作、投资，或其他",
     "contact": "邮箱、微信或 WhatsApp",

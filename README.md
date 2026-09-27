@@ -65,7 +65,7 @@ The first visit to the English page follows the browser language and remembers t
 4. **Start command:** `python3 server.py`
 5. Listen port: `server.py` binds `0.0.0.0:$PORT` (Railway sets `PORT`; default locally is `8080`).
 6. On startup the app creates table `pre_registrations` if it does not exist.
-7. After each successful insert the server emails a full `.xlsx` export of `pre_registrations` (see SMTP variables below). Missing SMTP config only logs a warning — the form still returns `{ "ok": true }`.
+7. After each successful insert the server builds a full `.xlsx` export of `pre_registrations` and delivers it (**Telegram preferred**, SMTP optional fallback — see variables below). Missing delivery config only logs a warning — the form still returns `{ "ok": true }`.
 
 Primary form path: browser `POST /api/pre-register` with the JSON body from `js/main.js` → insert → `{ "ok": true }`. After a successful (or failed) API call the page still shows the thanks screen, opens the WeChat QR when configured, and copies a text summary to the clipboard. If the API fails after one retry, the thanks note explains the clipboard fallback and does not claim the row was saved to the database.
 
@@ -75,14 +75,28 @@ Primary form path: browser `POST /api/pre-register` with the JSON body from `js/
 | --- | --- | --- | --- |
 | `DATABASE_URL` | Yes (prod) | from Railway Postgres | Persist pre-registrations |
 | `PORT` | No | set by Railway / `8080` locally | Listen port |
-| `MAIL_TO` | No | `vlad.presnyakov@gmail.com` | Inbox for the xlsx export |
-| `MAIL_FROM` | No | `SMTP_USER`, else `MAIL_TO` | From address |
-| `SMTP_HOST` | For email | `smtp.gmail.com` | SMTP server |
-| `SMTP_PORT` | For email | `587` | SMTP port (STARTTLS) |
-| `SMTP_USER` | For email | your Gmail address | SMTP login |
-| `SMTP_PASSWORD` | For email | Gmail **App Password** | SMTP password (not the normal Gmail password) |
+| `TELEGRAM_BOT_TOKEN` | Preferred | from [@BotFather](https://t.me/BotFather) | Bot token for `sendDocument` |
+| `TELEGRAM_CHAT_ID` | Preferred | numeric chat id | Where to send the `.xlsx` |
+| `MAIL_TO` | No | `vlad.presnyakov@gmail.com` | Inbox for SMTP fallback |
+| `MAIL_FROM` | No | `SMTP_USER`, else `MAIL_TO` | From address (SMTP fallback) |
+| `SMTP_HOST` | Optional fallback | `smtp.gmail.com` | SMTP server |
+| `SMTP_PORT` | Optional fallback | `587` | SMTP port (STARTTLS) |
+| `SMTP_USER` | Optional fallback | your Gmail address | SMTP login |
+| `SMTP_PASSWORD` | Optional fallback | Gmail **App Password** | SMTP password (not the normal Gmail password) |
 
-**Gmail App Password setup:** Google Account → Security → 2-Step Verification (on) → App passwords → create one for “Mail” → paste the 16-character value into Railway as `SMTP_PASSWORD`. Set `SMTP_USER` to the same Gmail address, `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`. Optionally override `MAIL_TO` / `MAIL_FROM`.
+**Delivery order:** if `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` are both set, the `.xlsx` is sent to Telegram (caption includes the new registrant name and «полная таблица во вложении»). Otherwise, if `SMTP_HOST` + `SMTP_USER` + `SMTP_PASSWORD` are set, it is emailed. If neither path is configured, the server logs a warning and continues.
+
+**Telegram setup (preferred):**
+
+1. Open [@BotFather](https://t.me/BotFather) in Telegram → `/newbot` (or reuse an existing bot) → copy the bot token.
+2. Start a chat with your bot (send `/start`), or add the bot to a group and send a message there.
+3. Call `https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates` in a browser and find `"chat":{"id": ...}` — that number is your chat id (for groups it is often negative).
+4. In Railway → your web service → Variables, set:
+   - `TELEGRAM_BOT_TOKEN` = the BotFather token
+   - `TELEGRAM_CHAT_ID` = the chat id from `getUpdates`
+5. Do not commit tokens to git.
+
+**Gmail App Password setup (optional SMTP fallback):** Google Account → Security → 2-Step Verification (on) → App passwords → create one for “Mail” → paste the 16-character value into Railway as `SMTP_PASSWORD`. Set `SMTP_USER` to the same Gmail address, `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`. Optionally override `MAIL_TO` / `MAIL_FROM`.
 
 ## Deploy to Vercel
 
@@ -106,7 +120,7 @@ To change which photo a day uses, edit that day’s `"image"` value in all three
 
 ## Form storage (Postgres / SQLite)
 
-Validated submissions `POST` JSON to `/api/pre-register`. The server inserts a row and returns `{ "ok": true }`. On success it also builds an Excel export of the **entire** `pre_registrations` table and emails it when SMTP env vars are set (see Railway section above).
+Validated submissions `POST` JSON to `/api/pre-register`. The server inserts a row and returns `{ "ok": true }`. On success it also builds an Excel export of the **entire** `pre_registrations` table and sends it via Telegram when `TELEGRAM_*` is set, or via SMTP as a fallback (see Railway section above). Front-end UX is unchanged (thanks screen, WeChat QR, clipboard).
 
 JSON body keys match `payload()` in `js/main.js`: `lang`, `fullName`, `join`, `joinLabel`, `otherDates`, `companies`, `businessInterest`, `phone`, `wechat`, `contact`, `adults`, `children`, `childAges`, `tracks`, `tracksLabels`.
 

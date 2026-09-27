@@ -303,7 +303,8 @@ def pre_register():
         app.logger.exception("pre-register insert failed: %s", exc)
         return jsonify({"ok": False, "error": "db"}), 500
 
-    # Email full-table xlsx; missing SMTP or send errors must not break UX.
+    # Deliver full-table xlsx (Telegram preferred, SMTP fallback);
+    # missing config or send errors must not break UX.
     send_pre_registration_export(
         full_name=full_name,
         fetch_fn=fetch_all_registrations,

@@ -13,6 +13,15 @@
      3. Приезжайте на север. / Зимой Россия больше всего похожа на себя.
 */
 
+// Only the approved day-by-day embed may request a height update.
+window.addEventListener("message", (event) => {
+  const frame = document.getElementById("ceibs-day-by-day");
+  if (!frame || event.origin !== window.location.origin || event.source !== frame.contentWindow) return;
+  const data = event.data;
+  if (!data || data.type !== "ceibs-programme-height" || !Number.isFinite(data.height)) return;
+  if (data.height > 0 && data.height < 200000) frame.style.height = `${Math.ceil(data.height)}px`;
+});
+
 const PAGE_LANG = document.documentElement.dataset.lang || "en";
 const ARRIVAL = new Date("2027-01-24T00:00:00+03:00");
 
@@ -224,7 +233,7 @@ function render(copy) {
       <div class="wrap">
         <p class="eyebrow">${esc(copy.program.eyebrow)}</p>
         <h2>${esc(copy.program.title)}</h2>
-        <ol class="days">${days}</ol>
+        <iframe id="ceibs-day-by-day" title="${esc(copy.program.title)}" src="programme/${esc(PAGE_LANG)}.html" style="display:block;width:calc(100vw - 40px);max-width:1560px;height:1200px;border:0;position:relative;left:50%;transform:translateX(-50%);" loading="eager"></iframe>
         <p class="extension">${esc(copy.program.extension)}</p>
         ${!isBlank(copy.program.backup) ? `
         <aside class="backup">

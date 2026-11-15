@@ -12,10 +12,10 @@
     var nav = String(list).toLowerCase();
     var detected = nav.indexOf("zh") === 0 ? "zh" : nav.indexOf("ru") === 0 ? "ru" : "en";
     try { localStorage.setItem(key, detected); } catch (e) {}
-    if (detected === "zh") location.replace("zh.html");
-    else if (detected === "ru") location.replace("ru.html");
-  } else if (stored === "zh") location.replace("zh.html");
-  else if (stored === "ru") location.replace("ru.html");
+    if (detected === "zh") location.replace("zh.html" + location.hash);
+    else if (detected === "ru") location.replace("ru.html" + location.hash);
+  } else if (stored === "zh") location.replace("zh.html" + location.hash);
+  else if (stored === "ru") location.replace("ru.html" + location.hash);
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />

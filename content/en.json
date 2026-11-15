@@ -407,7 +407,7 @@
     "paymentNote": "This only records your preferred method. No payment is collected here.",
     "phone": "Phone",
     "wechat": "WeChat",
-    "privacy": "Organizers Vladislav and Olga use the names and passport scans to arrange domestic flights and hotels. Copies are sent to each organizer in personal Telegram messages. Server-held copies are deleted on March 2, 2027 at 00:00 UTC; this does not delete Telegram copies held by the recipients.",
+    "privacy": "Organizers Vladislav and Olga use the names and passport scans to arrange domestic flights and hotels. Copies are sent to the organizers in private Telegram messages. Initially, only Vladislav receives them; Olga will be connected later. Server-held copies are deleted on March 2, 2027 at 00:00 UTC; this does not delete Telegram copies held by the recipients.",
     "consent": "I consent to this use and forwarding of my information and documents. I confirm I am authorized to provide every accompanying person’s information and documents and have obtained their consent (or the consent of their legal representative).",
     "submit": "Submit final registration",
     "retrySubmit": "Retry final confirmation",

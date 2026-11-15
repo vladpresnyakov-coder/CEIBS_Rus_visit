@@ -246,7 +246,9 @@
     request("/config").then((config) => {
       enabled = config.enabled === true && config.maxFileBytes === MAX_BYTES && Array.isArray(config.formats) && TYPES.every((type) => config.formats.includes(type)) && config.retentionDate === "2027-03-02";
       availability.textContent = enabled ? (config.reviewMode ? copy.reviewReady : copy.ready) : copy.unavailable;
-      if (config.reviewMode && enabled) root.scrollIntoView();
+      if ((config.reviewMode && enabled) || location.hash === "#register") {
+        (root.closest("#register") || root).scrollIntoView();
+      }
       lock();
     }).catch(() => {
       enabled = false;

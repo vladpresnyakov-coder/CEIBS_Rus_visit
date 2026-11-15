@@ -248,12 +248,13 @@ class FinalRegistration:
         self.recipients = []
         self._key = b""
         token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+        minimum_recipients = 1 if os.environ.get("FINAL_REGISTRATION_ALLOW_SINGLE_RECIPIENT") == "1" else 2
         try:
             self._key = os.environ.get("FINAL_REGISTRATION_ENCRYPTION_KEY", "").encode("ascii")
             self.cipher = Fernet(self._key)
             recipients = json.loads(os.environ.get("FINAL_REGISTRATION_TELEGRAM_CHAT_IDS", "[]"))
             if (not isinstance(recipients, list)
-                    or (len(recipients) != 1 if self.review_mode else len(recipients) < 2)
+                    or (len(recipients) != 1 if self.review_mode else len(recipients) < minimum_recipients)
                     or any(type(v) is not int or v <= 0 for v in recipients)
                     or len(set(recipients)) != len(recipients)):
                 raise ValueError()

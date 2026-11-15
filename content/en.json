@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Russia in Winter · CEIBS classmates · January 2027",
-    "description": "A private winter journey for CEIBS classmates. January 24–31, 2027: Moscow, Teriberka, and St. Petersburg. Pre-register."
+    "description": "A private winter journey for CEIBS classmates. January 24–31, 2027: Moscow, Teriberka, and St. Petersburg. Final registration."
   },
   "skip": "Skip to content",
   "nav": {
@@ -9,7 +9,7 @@
     "tracks": "Tracks",
     "why": "Winter",
     "program": "Program",
-    "register": "Pre-register",
+    "register": "Final registration",
     "langLabel": "Language"
   },
   "hero": {
@@ -18,7 +18,7 @@
     "headlineRest": "Seen Through Our Eyes.",
     "dates": "January 24–31, 2027",
     "subline": "Moscow · Murmansk & Teriberka · St. Petersburg",
-    "cta": "Pre-register",
+    "cta": "Final registration",
     "countdownLabel": "Until arrival in Moscow",
     "days": "Days",
     "hours": "Hours",
@@ -373,5 +373,62 @@
     "wechatQrAlt": "WeChat QR code for Vlad (王鹏)",
     "closeQr": "Close"
   },
-  "loadError": "The page text did not load. Refresh and try again."
+  "loadError": "The page text did not load. Refresh and try again.",
+  "finalForm": {
+    "eyebrow": "04 — Final registration",
+    "title": "Confirm your participation",
+    "intro": "Add passport details for yourself and everyone accompanying you, then share your group’s travel plans.",
+    "requiredNote": "Fields marked * are required. Phone and WeChat are optional.",
+    "sessionNote": "Your entries and selected files stay in this tab until submission. Do not refresh or change language while completing the form.",
+    "checking": "Checking registration availability…",
+    "ready": "Final registration is available.",
+    "reviewReady": "Private test: the workbook and scans are sent to Vladislav only. Public registration is not yet open. Please use test documents.",
+    "unavailable": "Final registration is temporarily unavailable. You can view the form, but cannot submit yet. Please contact the organizers or return later.",
+    "primary": "You — main participant",
+    "companion": "Accompanying person {number}",
+    "fullName": "Full name exactly as in passport",
+    "passport": "Passport identity-page scan",
+    "fileHint": "One readable JPEG, PNG or PDF per person, up to 10 MiB (10,485,760 bytes). No encrypted or password-protected PDFs.",
+    "addPerson": "+ Add accompanying person",
+    "removePerson": "Remove accompanying person",
+    "groupTravel": "One arrival and one departure for your whole group. Enter local time in the arrival/departure city; extended stays are welcome.",
+    "arrival": "Arrival in Russia",
+    "departure": "Departure from Russia",
+    "city": "City",
+    "date": "Date",
+    "time": "Local time",
+    "flight": "Flight number",
+    "singleRoom": "Do you need a single room? (solo participants only)",
+    "yes": "Yes",
+    "no": "No",
+    "payment": "Preferred deposit payment method",
+    "alipay": "Alipay",
+    "internationalTransfer": "International bank transfer",
+    "paymentNote": "This only records your preferred method. No payment is collected here.",
+    "phone": "Phone (optional)",
+    "wechat": "WeChat (optional)",
+    "privacy": "Organizers Vladislav and Olga use the names and passport scans to arrange domestic flights and hotels. Copies are sent to each organizer in personal Telegram messages. Server-held copies are deleted on March 2, 2027 at 00:00 UTC; this does not delete Telegram copies held by the recipients.",
+    "consent": "I consent to this use and forwarding of my information and documents. I confirm I am authorized to provide every accompanying person’s information and documents and have obtained their consent (or the consent of their legal representative).",
+    "submit": "Submit final registration",
+    "retrySubmit": "Retry final confirmation",
+    "creating": "Preparing your registration…",
+    "uploading": "Uploading passport {current} of {total}…",
+    "sending": "Saving your final registration…",
+    "successTitle": "Your final registration is saved.",
+    "successBody": "The organizers’ private notifications are queued. No payment has been taken.",
+    "errors": {
+      "required": "Please complete this field with a valid value.",
+      "name": "Enter the passport-exact full name (2–300 characters).",
+      "choice": "Please choose one option.",
+      "consent": "Your explicit consent and authority for accompanying people are required.",
+      "fileRequired": "Please select this person’s passport scan.",
+      "fileSize": "Select a non-empty file no larger than 10 MiB.",
+      "fileType": "Use a JPEG (.jpg/.jpeg), PNG (.png) or PDF (.pdf) file.",
+      "fileRejected": "The server could not accept this document. Choose a readable JPEG, PNG or unencrypted PDF up to 10 MiB, then retry.",
+      "network": "Could not complete the request. Your entries and successfully uploaded documents are retained in this tab. Please retry.",
+      "expired": "The upload session expired. Your entries and selected files are retained; submit again to re-upload them.",
+      "retry": "Final confirmation could not be verified. Your entries are kept unchanged: retry final confirmation to safely check or complete the same registration, without creating a duplicate.",
+      "rejected": "The server did not accept the registration. Check the fields and try again; your entries and uploaded documents are retained."
+    }
+  }
 }

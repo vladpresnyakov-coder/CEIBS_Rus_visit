@@ -19,7 +19,7 @@ from flask import Flask, jsonify, request, send_from_directory
 from mail_export import send_pre_registration_export
 
 ROOT = Path(__file__).resolve().parent
-DATA_DIR = ROOT / "data"
+DATA_DIR = Path(os.environ.get("CEIBS_DATA_DIR") or (ROOT / "data")).resolve()
 SQLITE_PATH = DATA_DIR / "pre_registrations.sqlite"
 DATABASE_URL = (os.environ.get("DATABASE_URL") or "").strip()
 
@@ -313,20 +313,44 @@ def pre_register():
     return jsonify({"ok": True})
 
 
+PUBLIC_PAGES = {"index.html", "ru.html", "zh.html", "favicon.svg"}
+PUBLIC_ASSET_TYPES = {
+    "fonts": {".woff2", ".woff", ".ttf"},
+    "images": {".jpg", ".jpeg", ".png", ".webp", ".svg", ".ico"},
+    "css": {".css"},
+    "js": {".js"},
+    "content": {".json"},
+    "programme": {".html", ".css", ".js", ".jpg", ".jpeg", ".png", ".webp", ".svg", ".woff2", ".woff", ".ttf", ".txt"},
+}
+
+
 @app.get("/", defaults={"path": "index.html"})
 @app.get("/<path:path>")
 def static_files(path: str):
-    target = (ROOT / path).resolve()
-    if not str(target).startswith(str(ROOT)):
+    parts = Path(path).parts
+    if not parts or any(part.startswith(".") for part in parts):
         return ("Not found", 404)
-    if target.is_dir():
-        target = target / "index.html"
-    if not target.is_file():
+    target = (ROOT / path).resolve()
+    public_asset = len(parts) > 1 and target.suffix.lower() in PUBLIC_ASSET_TYPES.get(parts[0], set())
+    if (path not in PUBLIC_PAGES and not public_asset) or not target.is_relative_to(ROOT) or not target.is_file():
         return ("Not found", 404)
     return send_from_directory(target.parent, target.name)
 
 
+@app.after_request
+def safe_response_headers(response):
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    if request.path.startswith("/api/final-register"):
+        response.headers["Cache-Control"] = "no-store, private"
+    return response
+
+
 ensure_schema()
+
+from final_registration import init_final_registration
+
+final_registration = init_final_registration(app, _pg_conn, _sqlite_conn, _is_postgres)
 
 
 if __name__ == "__main__":

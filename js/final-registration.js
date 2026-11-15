@@ -22,7 +22,7 @@
         <p class="final-note">${t("groupTravel")}</p>${journey("arrival")}${journey("departure")}
         <fieldset class="final-group" id="final-single"><legend>${t("singleRoom")} <span class="req">*</span></legend>${options("singleRoom", [["yes", copy.yes], ["no", copy.no]])}<p class="hint" id="singleRoom-error"></p></fieldset>
         <fieldset class="final-group"><legend>${t("payment")} <span class="req">*</span></legend>${options("paymentMethod", [["alipay", copy.alipay], ["international_transfer", copy.internationalTransfer]])}<p class="final-note">${t("paymentNote")}</p><p class="hint" id="paymentMethod-error"></p></fieldset>
-        <div class="field-row">${field("final-phone", copy.phone, "tel", false)}${field("final-wechat", copy.wechat, "text", false)}</div>
+        <div class="field-row">${field("final-phone", copy.phone, "tel")}${field("final-wechat", copy.wechat)}</div>
         <p class="final-note" id="final-privacy">${t("privacy")}</p>
         <label class="final-consent" for="final-consent"><input type="checkbox" id="final-consent" required aria-describedby="final-privacy final-consent-error"><span>${t("consent")} <span class="req">*</span></span></label><p class="hint" id="final-consent-error"></p>
         <p class="form-error" id="final-error" role="alert" tabindex="-1" hidden></p>
@@ -120,7 +120,7 @@
           const length = Array.from(input.value).length;
           if (!input.value.trim() || length < 2 || length > 300) message = copy.errors.name;
         } else if (input.type === "checkbox" && !input.checked) message = copy.errors.consent;
-        else if (!input.checkValidity() || (input.required && input.type === "text" && !input.value.trim())) message = copy.errors.required;
+        else if (!input.checkValidity() || (input.required && ["text", "tel"].includes(input.type) && !input.value.trim())) message = copy.errors.required;
         if (input.type === "radio") {
           message = form.querySelector(`input[name="${input.name}"]:checked`) ? "" : copy.errors.choice;
           root.querySelector(`#${input.name}-error`).textContent = message;

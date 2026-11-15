@@ -142,8 +142,7 @@ def validate_submission(data):
             raise Rejected() from None
         clean[field] = {"city": city, "date": day, "time": hour, "flight": flight}
     for field in ("phone", "wechat"):
-        value = data.get(field, "")
-        clean[field] = "" if value == "" else _text(value)
+        clean[field] = _text(data.get(field))
     return clean
 
 

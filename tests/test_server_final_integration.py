@@ -42,7 +42,8 @@ def test_canonical_server_registers_and_delivers_final_group(tmp_path, monkeypat
         people.append({'fullName': f'Synthetic Participant {number}', 'passportId': uploaded.json['passportId']})
     trip = {'city': 'Synthetic City', 'date': '2027-01-24', 'time': '12:00', 'flight': 'TEST001'}
     payload = {'lang': 'ru', 'people': people, 'arrival': trip, 'departure': {**trip, 'date': '2027-01-31'},
-               'singleRoom': None, 'paymentMethod': 'alipay', 'privacyConsent': True}
+               'singleRoom': None, 'paymentMethod': 'alipay', 'privacyConsent': True,
+               'phone': '+1 202 555 0123', 'wechat': 'SyntheticContact'}
     endpoint = f"/api/final-register/drafts/{draft['draftId']}/submit"
     result = client.post(endpoint, headers=headers, json=payload)
     assert result.status_code == 200 and result.json['participantsCount'] == 2

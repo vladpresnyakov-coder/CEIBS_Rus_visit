@@ -100,7 +100,8 @@ def payload(passports, name="Synthetic Participant"):
             "arrival": {"city": "Москва", "date": "2027-01-20", "time": "03:04", "flight": " CA 001 "},
             "departure": {"city": "上海", "date": "2027-02-04", "time": "23:45", "flight": "SU 202"},
             "singleRoom": False if len(passports) == 1 else None,
-            "paymentMethod": "international_transfer", "privacyConsent": True}
+            "paymentMethod": "international_transfer", "privacyConsent": True,
+            "phone": "+1 202 555 0123", "wechat": "SyntheticContact"}
 
 
 def submit(h, d, data):

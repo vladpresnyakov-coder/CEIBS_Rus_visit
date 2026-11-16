@@ -354,5 +354,8 @@ final_registration = init_final_registration(app, _pg_conn, _sqlite_conn, _is_po
 
 
 if __name__ == "__main__":
+    from registration_snapshot import start_environment_snapshot
+
+    start_environment_snapshot(final_registration)
     port = int(os.environ.get("PORT", "8080"))
     app.run(host="0.0.0.0", port=port)

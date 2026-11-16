@@ -384,6 +384,7 @@ class FinalRegistration:
         now = self.clock()
         with self.db(write=True) as conn:
             self.sql(conn, "DELETE FROM final_outbox WHERE registration_id IN (SELECT id FROM final_registrations WHERE expires<=?)", (now,))
+            self.sql(conn, "DELETE FROM final_outbox WHERE done=1 AND recipient_hash LIKE ? AND available<=?", ("manual-export:%", now))
             for table in ("final_passports", "final_drafts", "final_registrations"):
                 self.sql(conn, f"DELETE FROM {table} WHERE expires<=?", (now,))
 
